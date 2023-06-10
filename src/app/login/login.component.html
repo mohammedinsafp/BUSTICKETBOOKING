@@ -1,0 +1,19 @@
+<body>
+     <div class="container">
+    <h2 class="login">Login</h2>
+      <div class="form-group">
+        <!-- <label class="label">Username:</label> -->
+        <input type="text" placeholder="Username" [(ngModel)]="name"  required>
+      </div>
+      <div class="form-group">
+        <!-- <label class="label">Password:</label> -->
+        <input type="password" placeholder="Password" [(ngModel)]="password"  required>
+      </div>
+      <div class="sum">
+        <input type="submit" value="Login" (click)="login()" class="input">
+      </div>
+      <div class="links">
+        <a  routerLink="/signup">SignUp</a>
+        <a >Forgot Password</a>
+      </div>
+  </div>
