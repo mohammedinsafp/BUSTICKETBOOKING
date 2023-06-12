@@ -2,7 +2,7 @@ body {
   font-family: 'Times New Roman', Times, serif;
   background-image: url('/assets/image/my-image7.jpg');  
   background-repeat: no-repeat;
-  background-size: 100% 100vh;
+  background-size: 0% 100vh;
   margin: 0;
   padding: 0;
 }
@@ -11,7 +11,7 @@ body {
 .container {
   background-image: url('/assets/image/my-image5.jpg');
   background-repeat: no-repeat;
-  background-size: 100% 100vh;
+  background-size: 0% 100vh;
   max-width: 400px;
   margin: 0 auto;
   padding: 10%;
@@ -96,3 +96,4 @@ body {
 .input:hover {
   background-color: #4f1591;
 }
+

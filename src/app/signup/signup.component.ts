@@ -14,15 +14,15 @@ export class SignupComponent {
     name:string= '';
     password:string='';
     mobile:string='';
+    role:string="user";
  user:User=new User();
-
   constructor(private service:ServiceService,private router: Router) { }
-
   signup(){
     this.user.email=this.email;
     this.user.name=this.name;
     this.user.password=this.password;
     this.user.mobile=this.mobile;
+    this.user.role=this.role;
     this.service.signupok(this.user) .subscribe(
       response => {
         console.log(response);

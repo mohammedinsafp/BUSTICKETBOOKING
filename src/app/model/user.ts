@@ -3,4 +3,5 @@ export class User {
     mobile : string='';
     password : string ='';
     email:string='';
+    role:string='';
 }

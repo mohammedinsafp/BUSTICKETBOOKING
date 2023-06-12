@@ -6,6 +6,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { DeletebusComponent } from './deletebus/deletebus.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { MainhomepageComponent } from './mainhomepage/mainhomepage.component';
 import { PassengerdetailsComponent } from './passengerdetails/passengerdetails.component';
 import { SearchpageComponent } from './searchpage/searchpage.component';
 import { SeatavailabilityComponent } from './seatavailability/seatavailability.component';
@@ -42,7 +43,7 @@ const routes: Routes = [
     component:AddbusComponent
   },
   {
-    path:"adminhomepage",
+    path:"buspage",
     component:AdminhomepageComponent
   },
   {
@@ -56,6 +57,10 @@ const routes: Routes = [
   {
     path:"searchpage",
     component:SearchpageComponent
+  },
+  {
+    path:"mainhomepage",
+    component:MainhomepageComponent
   }
 ];
 

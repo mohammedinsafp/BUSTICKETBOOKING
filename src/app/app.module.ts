@@ -17,6 +17,7 @@ import { FormsModule } from '@angular/forms';
 
 import { ServiceService } from './service.service';
 import { HttpClientModule } from '@angular/common/http';
+import { MainhomepageComponent } from './mainhomepage/mainhomepage.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +31,8 @@ import { HttpClientModule } from '@angular/common/http';
     AdminhomepageComponent,
     AddbusComponent,
     UpdatebusComponent,
-    DeletebusComponent
+    DeletebusComponent,
+    MainhomepageComponent
   ],
   imports: [
     BrowserModule,

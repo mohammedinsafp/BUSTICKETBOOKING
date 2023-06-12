@@ -1,7 +1,5 @@
 <div class="container">
     <h1>Delete Bus</h1>
-    <form>
-      <input type="text" placeholder="Bus ID" required>
-      <button type="submit">Delete</button>
-    </form>
+      <input type="text" placeholder="Bus ID" required [(ngModel)]="id">
+      <button type="submit" (click)="delete()">Delete</button>
   </div>
