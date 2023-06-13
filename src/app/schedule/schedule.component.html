@@ -2,7 +2,6 @@
     <title>Bus Ticket Booking App</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   </head>
-  
   <body>
     <div class="container">
       <h1 class="text-center mt-5">Bus Ticket Booking App</h1>
@@ -23,9 +22,7 @@
                 </tr>
               </thead>
               <tbody>
-                <!-- <ng-container *ngFor="let b of busDto"> -->
                     <tr *ngFor="let schedule of schedules; let i = index">
-                  <!-- <td>{{ schedule.routeId }}</td> -->
                   <td>{{ busDto[i].busNo }}</td>
                   <td>{{ busDto[i].busName }}</td>
                   <td>{{ schedule.departureTime }}</td>
@@ -34,11 +31,6 @@
                     <td>{{ busDto[i].totalSeats }}</td>
                   <td><a href="#" class="btn btn-primary btn-sm" (click)="bookTicket(schedule)" routerLink="/seatavailability">Book</a></td>
           </tr>
-          <!-- <tr *ngFor="let b of busDto">
-            
-            
-          </tr> -->
-          
               </tbody>
             </table>
           </div>

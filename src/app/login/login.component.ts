@@ -22,14 +22,14 @@ login(){
   this.user.password=this.password;
   if(this.name=="admin" && this.password=="admin"){
     this.router.navigate(['/mainhomepage']);
-    alert("Login success")
+    
   }
   else{
   this.service.loginok(this.user).subscribe(
     data => {
       console.log(data);
             this.router.navigate(['/searchpage']);
-            alert('Login success');
+            
         },
         (error: HttpErrorResponse) => { // Add error parameter and handle the error here
           if (error.status === 401) {
