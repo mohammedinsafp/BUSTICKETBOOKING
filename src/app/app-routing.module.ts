@@ -20,7 +20,7 @@ const routes: Routes = [
     component:LoginComponent
   },
   {
-    path:"nn",
+    path:"",
     component:HomeComponent
   },
   {
@@ -64,7 +64,7 @@ const routes: Routes = [
     component:MainhomepageComponent
   },
   {
-    path:"",
+    path:"schedulepage",
     component:ScheduleComponent
   }
 ];

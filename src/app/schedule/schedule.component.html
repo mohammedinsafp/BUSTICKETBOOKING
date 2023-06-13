@@ -1,6 +1,4 @@
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bus Ticket Booking App</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   </head>
@@ -15,21 +13,32 @@
             <table class="table table-bordered">
               <thead>
                 <tr>
-                  <th>Route</th>
+                  <th>Bus No</th>
+                  <th>Bus Name</th>
                   <th>Departure Time</th>
                   <th>Arrival Time</th>
-                  <th>Availability</th>
+                  <th>Bus Type</th>
+                  <th>Total Seats</th>
                   <th>Book Now</th>
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let schedule of schedules">
-                  <td>{{ schedule.route }}</td>
+                <!-- <ng-container *ngFor="let b of busDto"> -->
+                    <tr *ngFor="let schedule of schedules; let i = index">
+                  <!-- <td>{{ schedule.routeId }}</td> -->
+                  <td>{{ busDto[i].busNo }}</td>
+                  <td>{{ busDto[i].busName }}</td>
                   <td>{{ schedule.departureTime }}</td>
                   <td>{{ schedule.arrivalTime }}</td>
-                  <td>{{ schedule.availability }} seats</td>
-                  <td><a href="#" class="btn btn-primary btn-sm" (click)="bookTicket(schedule)">Book</a></td>
-                </tr>
+                    <td>{{ busDto[i].busType }}</td>
+                    <td>{{ busDto[i].totalSeats }}</td>
+                  <td><a href="#" class="btn btn-primary btn-sm" (click)="bookTicket(schedule)" routerLink="/seatavailability">Book</a></td>
+          </tr>
+          <!-- <tr *ngFor="let b of busDto">
+            
+            
+          </tr> -->
+          
               </tbody>
             </table>
           </div>

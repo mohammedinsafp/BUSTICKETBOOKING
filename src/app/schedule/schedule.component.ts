@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { BusDto } from '../model/bus-dto';
 import { Schedule } from '../model/schedule';
+import { ServiceService } from '../service.service';
 
 @Component({
   selector: 'app-schedule',
@@ -7,27 +10,12 @@ import { Schedule } from '../model/schedule';
   styleUrls: ['./schedule.component.css']
 })
 export class ScheduleComponent {
-  schedules = [
-    {
-      route: 'Route 1',
-      departureTime: '8:00 AM',
-      arrivalTime: '11:00 AM',
-      availability: 10
-    },
-    {
-      route: 'Route 2',
-      departureTime: '10:00 AM',
-      arrivalTime: '1:00 PM',
-      availability: 5
-    },
-    {
-      route: 'Route 3',
-      departureTime: '12:00 PM',
-      arrivalTime: '3:00 PM',
-      availability: 8
-    }
+  constructor(private service:ServiceService,private router: Router) { 
+  }
+  schedules:Schedule[]=this.service.s1;
+  busDto:BusDto[]=this.service.s2;
+  
     // Add more objects for additional schedules
-  ];
 bookTicket(schedule:Schedule){
   console.log('Booking ticket for:', schedule);
 }
