@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { MainhomepageComponent } from './mainhomepage/mainhomepage.component';
 import { PassengerdetailsComponent } from './passengerdetails/passengerdetails.component';
+import { ScheduleComponent } from './schedule/schedule.component';
 import { SearchpageComponent } from './searchpage/searchpage.component';
 import { SeatavailabilityComponent } from './seatavailability/seatavailability.component';
 import { SignupComponent } from './signup/signup.component';
@@ -19,7 +20,7 @@ const routes: Routes = [
     component:LoginComponent
   },
   {
-    path:"",
+    path:"nn",
     component:HomeComponent
   },
   {
@@ -61,6 +62,10 @@ const routes: Routes = [
   {
     path:"mainhomepage",
     component:MainhomepageComponent
+  },
+  {
+    path:"",
+    component:ScheduleComponent
   }
 ];
 

@@ -18,6 +18,12 @@ import { FormsModule } from '@angular/forms';
 import { ServiceService } from './service.service';
 import { HttpClientModule } from '@angular/common/http';
 import { MainhomepageComponent } from './mainhomepage/mainhomepage.component';
+import { AddscheduleComponent } from './addschedule/addschedule.component';
+import { UpdatescheduleComponent } from './updateschedule/updateschedule.component';
+import { DeletescheduleComponent } from './deleteschedule/deleteschedule.component';
+import { ScheduleComponent } from './schedule/schedule.component';
+import { BusComponent } from './bus/bus.component';
+import { ShowscheduleComponent } from './showschedule/showschedule.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +38,13 @@ import { MainhomepageComponent } from './mainhomepage/mainhomepage.component';
     AddbusComponent,
     UpdatebusComponent,
     DeletebusComponent,
-    MainhomepageComponent
+    MainhomepageComponent,
+    AddscheduleComponent,
+    UpdatescheduleComponent,
+    DeletescheduleComponent,
+    ScheduleComponent,
+    BusComponent,
+    ShowscheduleComponent
   ],
   imports: [
     BrowserModule,

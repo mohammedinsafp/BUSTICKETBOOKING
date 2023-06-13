@@ -1,0 +1,42 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Ticket Booking App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  </head>
+  
+  <body>
+    <div class="container">
+      <h1 class="text-center mt-5">Bus Ticket Booking App</h1>
+      <div class="row justify-content-center mt-5">
+        <div class="col-md-8">
+          <h2 class="text-center mb-4">Bus Schedule</h2>
+          <div class="table-responsive">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Route</th>
+                  <th>Departure Time</th>
+                  <th>Arrival Time</th>
+                  <th>Availability</th>
+                  <th>Book Now</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let schedule of schedules">
+                  <td>{{ schedule.route }}</td>
+                  <td>{{ schedule.departureTime }}</td>
+                  <td>{{ schedule.arrivalTime }}</td>
+                  <td>{{ schedule.availability }} seats</td>
+                  <td><a href="#" class="btn btn-primary btn-sm" (click)="bookTicket(schedule)">Book</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"></script>
+  </body>
