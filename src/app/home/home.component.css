@@ -1,50 +1,22 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
+.dark-theme {
+  background-color: #1a1a1a;
+  color: #fff;
+  background-size: cover;
+  background-position: center;
+}
 
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f1f1f1;
-  }
+.dark-theme h1,
+.dark-theme p {
+  color: #fff;
+}
 
-  .container {
-    max-width: 800px;
-    margin: 0 auto;
-    margin-top: 10%;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
+.dark-theme .btn-primary {
+  background-color: #7460a7;
+  border-color: #7460a7;
+  color: #fff;
+}
 
-  h1 {
-    margin-bottom: 20px;
-  }
-
-  p {
-    margin-bottom: 20px;
-  }
-
-  button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    border-radius: 4px;
-  }
-
-  button:hover {
-    opacity: 0.8;
-  }
-
-  @media screen and (max-width: 480px) {
-    .container {
-      max-width: 300px;
-    }
-  }
+.dark-theme .btn-primary:hover {
+  background-color: #5b4896;
+  border-color: #5b4896;
+}

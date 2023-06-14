@@ -1,18 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AddbusComponent } from './addbus/addbus.component';
-import { AdminhomepageComponent } from './adminhomepage/adminhomepage.component';
+import { AddbusComponent } from './BUSPAGE/addbus/addbus.component';
+import { AddscheduleComponent } from './schedulepages/addschedule/addschedule.component';
+import { AdminhomepageComponent } from './BUSPAGE/Busadminhomepage/adminhomepage.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DeletebusComponent } from './deletebus/deletebus.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
-import { MainhomepageComponent } from './mainhomepage/mainhomepage.component';
+import { MainhomepageComponent } from './Adminhomepage/mainhomepage.component';
 import { PassengerdetailsComponent } from './passengerdetails/passengerdetails.component';
-import { ScheduleComponent } from './schedule/schedule.component';
+import { ScheduleComponent } from './schedulepages/schedule/schedule.component';
 import { SearchpageComponent } from './searchpage/searchpage.component';
 import { SeatavailabilityComponent } from './seatavailability/seatavailability.component';
 import { SignupComponent } from './signup/signup.component';
-import { UpdatebusComponent } from './updatebus/updatebus.component';
+import { UpdatebusComponent } from './BUSPAGE/updatebus/updatebus.component';
+import { ShedulehomepageComponent } from './schedulepages/shedulehomepage/shedulehomepage.component';
+import { UpdatescheduleComponent } from './schedulepages/updateschedule/updateschedule.component';
 
 const routes: Routes = [
   {
@@ -66,6 +69,18 @@ const routes: Routes = [
   {
     path:"schedulepage",
     component:ScheduleComponent
+  },
+  {
+    path:"addschedule",
+    component:AddscheduleComponent
+  },
+  {
+    path:"schedulehomepage",
+    component:ShedulehomepageComponent
+  },
+  {
+    path:"updateschedule",
+    component:UpdatescheduleComponent
   }
 ];
 

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Bus } from '../model/bus';
-import { ServiceService } from '../service.service';
+import { Bus } from '../../model/bus';
+import { ServiceService } from '../../service.service';
 
 @Component({
   selector: 'app-addbus',

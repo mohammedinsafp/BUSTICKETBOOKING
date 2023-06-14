@@ -9,21 +9,21 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { SearchpageComponent } from './searchpage/searchpage.component';
 import { SeatavailabilityComponent } from './seatavailability/seatavailability.component';
 import { PassengerdetailsComponent } from './passengerdetails/passengerdetails.component';
-import { AdminhomepageComponent } from './adminhomepage/adminhomepage.component';
-import { AddbusComponent } from './addbus/addbus.component';
-import { UpdatebusComponent } from './updatebus/updatebus.component';
+import { AdminhomepageComponent } from './BUSPAGE/Busadminhomepage/adminhomepage.component';
+import { AddbusComponent } from './BUSPAGE/addbus/addbus.component';
+import { UpdatebusComponent } from './BUSPAGE/updatebus/updatebus.component';
 import { DeletebusComponent } from './deletebus/deletebus.component';
 import { FormsModule } from '@angular/forms';
 
 import { ServiceService } from './service.service';
 import { HttpClientModule } from '@angular/common/http';
-import { MainhomepageComponent } from './mainhomepage/mainhomepage.component';
-import { AddscheduleComponent } from './addschedule/addschedule.component';
-import { UpdatescheduleComponent } from './updateschedule/updateschedule.component';
-import { DeletescheduleComponent } from './deleteschedule/deleteschedule.component';
-import { ScheduleComponent } from './schedule/schedule.component';
-import { BusComponent } from './bus/bus.component';
-import { ShowscheduleComponent } from './showschedule/showschedule.component';
+import { MainhomepageComponent } from './Adminhomepage/mainhomepage.component';
+import { AddscheduleComponent } from './schedulepages/addschedule/addschedule.component';
+import { UpdatescheduleComponent } from './schedulepages/updateschedule/updateschedule.component';
+import { ScheduleComponent } from './schedulepages/schedule/schedule.component';
+import { BusComponent } from './BUSPAGE/bus/bus.component';
+import { ShedulehomepageComponent } from './schedulepages/shedulehomepage/shedulehomepage.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,10 +41,10 @@ import { ShowscheduleComponent } from './showschedule/showschedule.component';
     MainhomepageComponent,
     AddscheduleComponent,
     UpdatescheduleComponent,
-    DeletescheduleComponent,
     ScheduleComponent,
     BusComponent,
-    ShowscheduleComponent
+    ShedulehomepageComponent,
+   
   ],
   imports: [
     BrowserModule,

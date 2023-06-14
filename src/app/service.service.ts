@@ -16,6 +16,7 @@ export class ServiceService {
   deleteUrl!:string
   addbusUrl!:string;
   updateUrl!:string;
+  addscheduleUrl!:string;
   s1:Schedule[]=[];
   s2:BusDto[]=[];
   constructor(private http:HttpClient) {
@@ -25,6 +26,7 @@ export class ServiceService {
     this.addbusUrl="http://localhost:8080/bus";
     this.deleteUrl="http://localhost:8080/bus";
     this.updateUrl="http://localhost:8080/bus";
+    this.addscheduleUrl="http://localhost:8082/api/v1/schedules/schedule";
    }
      signupok(user:User):Observable<any>{
        return this.http.post(this.signupUrl,user)
@@ -46,5 +48,8 @@ export class ServiceService {
     }
     searchbus(date: string, source: string, dest: string) {
       return this.http.get(`http://localhost:8082/api/v1/schedules/schedule/bus/${date}/${source}/${dest}`);
+    }
+    addscheduleok(schedule:Schedule):Observable<any>{
+      return this.http.post(this.addscheduleUrl,schedule);
     }
   }
