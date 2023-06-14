@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { BusDto } from '../../model/bus-dto';
-import { Schedule } from '../../model/schedule';
-import { ServiceService } from '../../service.service';
+import { BusDto } from '../model/bus-dto';
+import { Schedule } from '../model/schedule';
+import { ServiceService } from '../service.service';
 
 @Component({
   selector: 'app-schedule',

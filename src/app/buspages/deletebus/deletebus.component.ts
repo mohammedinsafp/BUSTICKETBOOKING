@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { ServiceService } from '../service.service';
+import { ServiceService } from '../../service.service';
 
 @Component({
   selector: 'app-deletebus',
