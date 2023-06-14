@@ -9,9 +9,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { SearchpageComponent } from './searchpage/searchpage.component';
 import { SeatavailabilityComponent } from './seatavailability/seatavailability.component';
 import { PassengerdetailsComponent } from './passengerdetails/passengerdetails.component';
-import { AdminhomepageComponent } from './BUSPAGE/Busadminhomepage/adminhomepage.component';
-import { AddbusComponent } from './BUSPAGE/addbus/addbus.component';
-import { UpdatebusComponent } from './BUSPAGE/updatebus/updatebus.component';
+import { AdminhomepageComponent } from './buspages/Busadminhomepage/adminhomepage.component';
+import { AddbusComponent } from './buspages/addbus/addbus.component';
+import { UpdatebusComponent } from './buspages/updatebus/updatebus.component';
 import { DeletebusComponent } from './deletebus/deletebus.component';
 import { FormsModule } from '@angular/forms';
 
@@ -21,7 +21,7 @@ import { MainhomepageComponent } from './Adminhomepage/mainhomepage.component';
 import { AddscheduleComponent } from './schedulepages/addschedule/addschedule.component';
 import { UpdatescheduleComponent } from './schedulepages/updateschedule/updateschedule.component';
 import { ScheduleComponent } from './schedulepages/schedule/schedule.component';
-import { BusComponent } from './BUSPAGE/bus/bus.component';
+import { BusComponent } from './buspages/bus/bus.component';
 import { ShedulehomepageComponent } from './schedulepages/shedulehomepage/shedulehomepage.component';
 
 @NgModule({

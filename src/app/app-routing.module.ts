@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AddbusComponent } from './BUSPAGE/addbus/addbus.component';
+import { AddbusComponent } from './buspages/addbus/addbus.component';
 import { AddscheduleComponent } from './schedulepages/addschedule/addschedule.component';
-import { AdminhomepageComponent } from './BUSPAGE/Busadminhomepage/adminhomepage.component';
+import { AdminhomepageComponent } from './buspages/Busadminhomepage/adminhomepage.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DeletebusComponent } from './deletebus/deletebus.component';
 import { HomeComponent } from './home/home.component';
@@ -13,7 +13,7 @@ import { ScheduleComponent } from './schedulepages/schedule/schedule.component';
 import { SearchpageComponent } from './searchpage/searchpage.component';
 import { SeatavailabilityComponent } from './seatavailability/seatavailability.component';
 import { SignupComponent } from './signup/signup.component';
-import { UpdatebusComponent } from './BUSPAGE/updatebus/updatebus.component';
+import { UpdatebusComponent } from './buspages/updatebus/updatebus.component';
 import { ShedulehomepageComponent } from './schedulepages/shedulehomepage/shedulehomepage.component';
 import { UpdatescheduleComponent } from './schedulepages/updateschedule/updateschedule.component';
 
@@ -79,7 +79,7 @@ const routes: Routes = [
     component:ShedulehomepageComponent
   },
   {
-    path:"updateschedule",
+    path:"buspages",
     component:UpdatescheduleComponent
   }
 ];
