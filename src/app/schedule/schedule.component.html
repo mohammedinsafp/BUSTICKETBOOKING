@@ -1,6 +1,34 @@
 <head>
     <title>Bus Ticket Booking App</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+      body {
+        background-color: #280101;
+      color: #fff;
+      padding-top: 100px;
+      height: 100vh;
+      }
+  
+      .table {
+        background-color: #333;
+        color: #fff;
+      }
+  
+      .table th,
+      .table td {
+        border-color: #444;
+      }
+  
+      .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+      }
+  
+      .btn-primary:hover {
+        background-color: #0069d9;
+        border-color: #0062cc;
+      }
+    </style>
   </head>
   <body>
     <div class="container">
@@ -12,7 +40,7 @@
             <table class="table table-bordered">
               <thead>
                 <tr>
-                  <th>Bus No</th>
+                  <!-- <th>Bus No</th> -->
                   <th>Bus Name</th>
                   <th>Departure Time</th>
                   <th>Arrival Time</th>
@@ -22,15 +50,17 @@
                 </tr>
               </thead>
               <tbody>
-                    <tr *ngFor="let schedule of schedules; let i = index">
-                  <td>{{ busDto[i].busNo }}</td>
+                <tr *ngFor="let schedule of schedules; let i = index">
+                  <!-- <td>{{ busDto[i].busNo }}</td> -->
                   <td>{{ busDto[i].busName }}</td>
                   <td>{{ schedule.departureTime }}</td>
                   <td>{{ schedule.arrivalTime }}</td>
-                    <td>{{ busDto[i].busType }}</td>
-                    <td>{{ busDto[i].totalSeats }}</td>
-                  <td><a href="#" class="btn btn-primary btn-sm" (click)="bookTicket(schedule)" routerLink="/seatavailability">Book</a></td>
-          </tr>
+                  <td>{{ busDto[i].busType }}</td>
+                  <td>{{ busDto[i].totalSeats }}</td>
+                  <td>
+                    <a href="#" class="btn btn-primary btn-sm" (click)="bookTicket(schedule)" routerLink="/seatavailability">Book</a>
+                  </td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -41,3 +71,4 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"></script>
   </body>
+  
