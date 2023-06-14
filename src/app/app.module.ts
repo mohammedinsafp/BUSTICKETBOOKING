@@ -5,14 +5,14 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { HomeComponent } from './home/home.component';
-import { DashboardComponent } from './buspages/dashboard/dashboard.component';
+import { DashboardComponent } from './bushomepages/dashboard/dashboard.component';
 import { SearchpageComponent } from './searchpage/searchpage.component';
 import { SeatavailabilityComponent } from './seatavailability/seatavailability.component';
 import { PassengerdetailsComponent } from './passengerdetails/passengerdetails.component';
-import { AdminhomepageComponent } from './buspages/Busadminhomepage/adminhomepage.component';
-import { AddbusComponent } from './buspages/addbus/addbus.component';
-import { UpdatebusComponent } from './buspages/updatebus/updatebus.component';
-import { DeletebusComponent } from './buspages/deletebus/deletebus.component';
+import { AdminhomepageComponent } from './bushomepages/Busadminhomepage/adminhomepage.component';
+import { AddbusComponent } from './bushomepages/addbus/addbus.component';
+import { UpdatebusComponent } from './bushomepages/updatebus/updatebus.component';
+import { DeletebusComponent } from './bushomepages/deletebus/deletebus.component';
 import { FormsModule } from '@angular/forms';
 import { ServiceService } from './service.service';
 import { HttpClientModule } from '@angular/common/http';
@@ -20,7 +20,7 @@ import { MainhomepageComponent } from './Adminhomepage/mainhomepage.component';
 import { AddscheduleComponent } from './schedulepages/addschedule/addschedule.component';
 import { UpdatescheduleComponent } from './schedulepages/updateschedule/updateschedule.component';
 import { ScheduleComponent } from './schedule/schedule.component';
-import { BusComponent } from './buspages/bus/bus.component';
+import { BusComponent } from './bushomepages/bus/bus.component';
 import { ShedulehomepageComponent } from './schedulepages/shedulehomepage/shedulehomepage.component';
 
 @NgModule({
