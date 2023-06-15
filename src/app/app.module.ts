@@ -22,6 +22,8 @@ import { UpdatescheduleComponent } from './schedulepages/updateschedule/updatesc
 import { ScheduleComponent } from './schedule/schedule.component';
 import { BusComponent } from './bushomepages/bus/bus.component';
 import { ShedulehomepageComponent } from './schedulepages/shedulehomepage/shedulehomepage.component';
+import { HeaderComponent } from './common/header/header.component';
+import { FooterComponent } from './common/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { ShedulehomepageComponent } from './schedulepages/shedulehomepage/shedul
     UpdatescheduleComponent,
     ScheduleComponent,
     BusComponent,
-    ShedulehomepageComponent
+    ShedulehomepageComponent,
+    HeaderComponent,
+    FooterComponent
    
   ],
   imports: [
