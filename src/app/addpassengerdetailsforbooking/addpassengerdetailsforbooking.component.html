@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Passenger Details</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #1a1a1a;
+      color: #fff;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .dark-theme .container {
+      background-color: #1a1a1a;
+      height: 100%;
+    }
+
+    .dark-theme h1,
+    .dark-theme p {
+      color: #fff;
+      text-align: center;
+    }
+
+    .dark-theme .card {
+      background-color: #333;
+      max-width: 400px;
+      margin: 0 auto;
+      margin-top: 50px;
+      border-radius: 10px;
+    }
+
+    .dark-theme .card-body {
+      padding: 20px;
+    }
+
+    .dark-theme .form-group label {
+      color: #fff;
+    }
+
+    .dark-theme .form-control {
+      background-color: #7460a7;
+      color: #fff;
+    }
+
+    .dark-theme .btn-primary {
+      background-color: #7460a7;
+      border-color: #7460a7;
+    }
+
+    .dark-theme .btn-primary:hover {
+      background-color: #5b4882;
+      border-color: #5b4882;
+    }
+  </style>
+</head>
+<body class="dark-theme">
+  <div class="container">
+    <div class="card">
+      <div class="card-body">
+        <h1>Passenger Details</h1>
+        <form>
+          <div class="form-group" *ngFor="let passenger of passengers; let i = index">
+            <label for="name{{i}}">Name:</label>
+            <input type="text" class="form-control" id="name{{i}}" required>
+          
+          
+            <label for="age{{i}}">Age:</label>
+            <input type="number" class="form-control" id="age{{i}}" required>
+          
+          
+            <label for="gender{{i}}">Gender:</label>
+            <select class="form-control" id="gender{{i}}" required>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <button class="btn btn-primary" type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

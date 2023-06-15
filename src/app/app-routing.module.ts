@@ -16,6 +16,7 @@ import { SignupComponent } from './signup/signup.component';
 import { UpdatebusComponent } from './bushomepages/updatebus/updatebus.component';
 import { ShedulehomepageComponent } from './schedulepages/shedulehomepage/shedulehomepage.component';
 import { UpdatescheduleComponent } from './schedulepages/updateschedule/updateschedule.component';
+import { AddpassengerdetailsforbookingComponent } from './addpassengerdetailsforbooking/addpassengerdetailsforbooking.component';
 
 const routes: Routes = [
   {
@@ -81,6 +82,10 @@ const routes: Routes = [
   {
     path:"homebuspages",
     component:UpdatescheduleComponent
+  },
+  {
+    path:"bookingdetails",
+    component:AddpassengerdetailsforbookingComponent
   }
 ];
 

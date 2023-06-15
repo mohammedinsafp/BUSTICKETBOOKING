@@ -21,6 +21,7 @@ export class SearchpageComponent {
   busDto: BusDto[]=[];
   dropdownValues: string[]=[];
   fare:number[]=[];
+  showTable: boolean = false;
  
 
   getDropdownValues(): void {
@@ -34,11 +35,11 @@ export class SearchpageComponent {
     );}
   search(): void {
     this.schedules=[];
-    
+    this.showTable = true;
     this.demosearch.search(this.textbox1, this.textbox2, this.textbox3).subscribe(
       (response: any) => {
         if (Array.isArray(response)) {
-          this.schedules = response as Schedule[];
+          this.schedules = response;
         } else {
           console.log("Invalid response format");
         }
@@ -55,7 +56,7 @@ export class SearchpageComponent {
         this.demosearch.searchbus(this.textbox1, this.textbox2, this.textbox3).subscribe(
           (response: any) => {
             if (Array.isArray(response)) {
-              this.busDto = response as BusDto[];
+              this.busDto = response;
             } else {
               console.log("Invalid response format");
             }

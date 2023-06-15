@@ -1,17 +1,16 @@
 <html>
   <head>
     <style>
-       body {
-        
+     body {
+      background-color: rgba(0,0,0,.7);
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center center;
       color: #fff;
       font-family: Arial, sans-serif;
       margin: 0;
-      padding: 20px;
-      opacity: 80%;
-      }
+     
+    }
 
       .awesome-table {
         width: 100%;
@@ -22,15 +21,14 @@
 
       .awesome-table th,
       .awesome-table td {
-        padding: 10px;
+        
         text-align: left;
-        border-bottom: 1px solid rgb(0, 0, 0);
         border-color: #000000;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       padding: 20px;
-      opacity: 95%;
+      
       }
 
       .awesome-table th {
@@ -50,15 +48,19 @@
       }
 
       .search-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 20px;
-      }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 5px;
+  margin-bottom: 10px; /* Adjust the margin bottom value as desired */
+  height: 10px; /* Adjust the height value as desired */
+  padding-top: 50px;
+}
 
       .search-container label {
-        margin-right: 10px;
-        color: #ddd;
+        /* margin-right: 10px; */
+        color: rgb(202, 159, 159);
+        
       }
 
       .search-container input[type="date"] {
@@ -68,8 +70,8 @@
 
       .search-container button {
         padding: 8px 15px;
-        background-color: #060539;
-        color: white;
+        background-color: #611717;
+        color: rgb(237, 211, 211);
         border: none;
         border-radius: 4px;
         cursor: pointer;
@@ -83,7 +85,9 @@
         border-radius: 4px;
         cursor: pointer;
       }
-
+      .search-container button:hover{
+        background-color: #333;
+      }
       .book-button:hover {
         background-color: #aaaeec;
       }
@@ -100,10 +104,10 @@
     <select id="destination-point" [(ngModel)]="textbox3">
       <option *ngFor="let value of dropdownValues" [value]="value">{{ value }}</option>
     </select>
-    Date: <input type="date" [(ngModel)]="textbox1" placeholder="yyyy-mm-dd" /><br /><br />
+    Date: <input type="date" [(ngModel)]="textbox1" placeholder="" /><br /><br />
     <button (click)="search()" (click)="searchbus()" (click)="getfare()">Search</button><br /><br /><br />
   </div>
-      <table class="awesome-table">
+      <table *ngIf="showTable" class="awesome-table">
         <thead>
           <tr>
             <th>Date</th>

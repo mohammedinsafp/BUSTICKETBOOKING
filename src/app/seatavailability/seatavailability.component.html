@@ -53,10 +53,10 @@
       background-color: #1f0d4d;
     }
     .dark-theme .booked {
-  background-color: #000000;
-  cursor: not-allowed;
-  
-}
+      background-color: #000000;
+      cursor: not-allowed;
+    }
+   
   </style>
 </head>
 <body class="dark-theme">
@@ -70,6 +70,7 @@
             <div class="seat" [ngClass]="{'temporarily-booked': isBooked(seat),'booked': seat === 'booked'}" (click)="toggleSeatStatus(i)"></div>
           </div>
         </div>
+        <button class="btn btn-primary" routerLink="/bookingdetails">Add Passenger Details</button>
       </div>
     </div>
   </div>

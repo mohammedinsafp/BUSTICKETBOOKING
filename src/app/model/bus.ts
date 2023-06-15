@@ -1,7 +1,8 @@
 export class Bus {
     busId:string='';
 	busNumber:string='';
-	regNo!:string;
+	regNo:string='';
+	busNo!:any;
 	engineNumber!:string;
 	busType!:string;
 	busName!:string;
