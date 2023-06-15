@@ -52,4 +52,10 @@ export class ServiceService {
     addscheduleok(schedule:Schedule):Observable<any>{
       return this.http.post(this.addscheduleUrl,schedule);
     }
+    getfare(date: string, source: string, dest: string) {
+      return this.http.get(`http://localhost:8082/api/v1/schedules/schedule/fare/${date}/${source}/${dest}`);
+    }
+    getDropdownValues(): Observable<string[]> {
+      return this.http.get<string[]>('http://localhost:8081/api/v1/buses/routeDetails/all');
+    }
   }

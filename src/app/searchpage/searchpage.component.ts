@@ -10,50 +10,78 @@ import { ServiceService } from '../service.service';
   styleUrls: ['./searchpage.component.css']
 })
 export class SearchpageComponent {
-  textbox1!:string;
-  textbox2!:string;
-  textbox3!:string;
-  constructor(private demosearch:ServiceService,private router: Router){}
-  search() {
-    this.demosearch.search(this.textbox1, this.textbox2, this.textbox3)
-      .subscribe(
-        (response: any) => {
-          // Handle the response from the API
-          if (Array.isArray(response)) {
-            this.demosearch.s1 = response as Schedule[];
-          } 
-          this.router.navigate(['/schedulepage']);
-          // else {
-          //   console.log("Invalid response format");
-          // }
-        }
-        // ,
-        // (error) => {
-        //   // Handle any errors
-        //   console.log("hai");
-        //   console.error(error);
-        // }
-      );
-}
-searchbus() {
-  this.demosearch.searchbus(this.textbox1, this.textbox2, this.textbox3)
-    .subscribe(
-      (response: any) => {
-        // Handle the response from the API
-        if (Array.isArray(response)) {
-          this.demosearch.s2 = response as BusDto[];
-        }
-        this.router.navigate(['/schedulepage']);
-        //  else {
-        //   console.log("Invalid response format");
-        // }
+  constructor(private demosearch:ServiceService){
+    this.getDropdownValues();
+  }
+  
+  textbox1: string='';
+  textbox2: string='';
+  textbox3: string='';
+  schedules: Schedule[]=[];
+  busDto: BusDto[]=[];
+  dropdownValues: string[]=[];
+  fare:number[]=[];
+ 
+
+  getDropdownValues(): void {
+    this.demosearch.getDropdownValues().subscribe(
+      (values: string[]) => {
+        this.dropdownValues = values;
+      },
+      (error: any) => {
+        console.log('Error fetching dropdown values:', error);
       }
-      //,
-      // (error) => {
-      //   // Handle any errors
-      //   console.log("hai");
-      //   console.error(error);
-      // }
+    );}
+  search(): void {
+    this.schedules=[];
+    
+    this.demosearch.search(this.textbox1, this.textbox2, this.textbox3).subscribe(
+      (response: any) => {
+        if (Array.isArray(response)) {
+          this.schedules = response as Schedule[];
+        } else {
+          console.log("Invalid response format");
+        }
+      },
+      (error) => {
+        console.error(error);
+      }
     );
-}
+
+      }
+
+      searchbus(): void {
+        this.busDto=[]
+        this.demosearch.searchbus(this.textbox1, this.textbox2, this.textbox3).subscribe(
+          (response: any) => {
+            if (Array.isArray(response)) {
+              this.busDto = response as BusDto[];
+            } else {
+              console.log("Invalid response format");
+            }
+          },
+          (error) => {
+            console.error(error);
+          }
+        );
+    
+          }
+          getfare(): void {
+            
+            this.fare=[];
+            
+            this.demosearch.getfare(this.textbox1, this.textbox2, this.textbox3).subscribe(
+              (response: any) => {
+                if (Array.isArray(response)) {
+                  this.fare = response as  number[];
+                } else {
+                  console.log("Invalid response format");
+                }
+              },
+              (error) => {
+                console.error(error);
+              }
+            );
+        
+              }
 }

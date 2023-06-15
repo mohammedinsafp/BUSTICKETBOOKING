@@ -11,10 +11,11 @@ import { ServiceService } from '../service.service';
 })
 export class ScheduleComponent {
   constructor(private service:ServiceService,private router: Router) { 
+    
   }
+  
   schedules:Schedule[]=this.service.s1;
   busDto:BusDto[]=this.service.s2;
-  
     // Add more objects for additional schedules
 bookTicket(schedule:Schedule){
   console.log('Booking ticket for:', schedule);
