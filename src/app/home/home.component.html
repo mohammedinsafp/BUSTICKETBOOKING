@@ -4,63 +4,61 @@
 <head>
   <style>
     body {
-      background-image: url("..\\assets\\image\\image2.png");
-      /* background-color:rgb(255, 255, 255); */
+      background-image: url("..\\assets\\image\\image3.png");
+      background-color:rgb(0, 0, 0);
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center center;
       color: rgb(115, 84, 84);
       font-family: Arial, sans-serif;
       margin: 0;
-     
     }
 
     .dark-theme {
       background-color: #1a1a1a;
-      color: rgb(255, 255, 255);
+      color: rgb(7, 2, 2);
     }
 
-    .row {
-      display: flex;
+    .row1 {
       align-items: center;
       justify-content: center;
-      gap: 20px;
-      padding: 10px;
-      padding-bottom: 5px;
     }
 
     .col-sm-7 {
       flex: 1;
       align-items: center;
       justify-content: center;
-      
-      
+      padding-top: 10%;
+      background-color: rgba(255, 255, 255, 0);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
     }
 
     h2 {
-        color: #5c6664;
-      }
+      color: #5c6664;
+    }
 
-      p {
-        color: rgb(206, 189, 242);
-      }
+    p {
+      color: rgb(206, 189, 242);
+    }
 
-      ul {
-        color: rgb(213, 196, 248);
-        padding-left: 20px;
-      }
+    ul {
+      color: rgb(213, 196, 248);
+      padding-left: 20px;
+    }
 
-      li {
-        margin-bottom: 10px;
-      }
+    li {
+      margin-bottom: 10px;
+    }
+
     .col-sm-2 {
       flex: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background-color: rgba(62, 44, 69, 0.4);
-      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0);
     }
 
     h1 {
@@ -75,7 +73,7 @@
 
     .btn-primary {
       padding: 10px 20px;
-      background-color: #3e39cd;
+      background-color: hsl(242, 60%, 51%);
       color: rgb(14, 7, 7);
       border: none;
       border-radius: 4px;
@@ -87,6 +85,16 @@
       background-color: #45a049;
     }
 
+    .app-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 9999;
+      background-color: transparent;
+      box-shadow: none;
+    }
+
     @media screen and (max-width: 768px) {
       .row {
         flex-direction: column;
@@ -95,6 +103,8 @@
       .col-sm-7,
       .col-sm-2 {
         width: 100%;
+        align-items: center;
+        justify-content: center;
       }
     }
 
@@ -125,35 +135,37 @@
 </head>
 
 <body class="dark-theme">
-  <app-header></app-header>
-  <div class="row">
-    <div class="col-sm-7">
+  <app-header class="app-header"></app-header>
+  <div class="">
+    <div class="">
+      <!-- Content for the first column -->
+      <br><br><br><br><br><br><br><br><br><br><br>
+    </div>
+  </div>
+  <div class="">
+    <div class="">
       <!-- Content for the first column -->
       <app-searchpage></app-searchpage>
     </div>
   </div>
-    <div class="row">
-    <div class="col-sm-2">
-      
+  <div class="row1">
+    <div class="">
       <h1>Welcome to the Bus Ticket Booking App</h1>
       <p>Book your bus tickets with ease and convenience.</p>
       <button routerLink="login" class="btn btn-primary">Get Started</button>
-  <h2>About the Bus Ticket Booking App</h2>
-  <p>The Bus Ticket Booking App provides a user-friendly platform to search, select, and book bus tickets for your desired routes. With a wide range of available bus options, you can easily plan your journey and secure your seat.</p>
+      <h2>About the Bus Ticket Booking App</h2>
+      <p>The Bus Ticket Booking App provides a user-friendly platform to search, select, and book bus tickets for your desired routes. With a wide range of available bus options, you can easily plan your journey and secure your seat.</p>
 
-    <h2>Key Features:</h2>
-  
+      <h2>Key Features:</h2>
 
-    <h2>Why Choose Us?</h2>
-    <p>Our Bus Ticket Booking App offers several advantages:</p>
-    
+      <h2>Why Choose Us?</h2>
+      <p>Our Bus Ticket Booking App offers several advantages:</p>
 
-
-    <h2>Get Started Now!</h2>
-    <p>Experience the convenience of booking bus tickets online. Click the "Get Started" button below and start your journey with us today!</p>
-</div>
-</div>
-  <app-footer></app-footer>
+      <h2>Get Started Now!</h2>
+      <p>Experience the convenience of booking bus tickets online. Click the "Get Started" button below and start your journey with us today!</p>
+    </div>
+  </div>
 </body>
+<app-footer class="app-footer"></app-footer>
 
 </html>

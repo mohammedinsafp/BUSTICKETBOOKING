@@ -17,6 +17,8 @@ import { UpdatebusComponent } from './bushomepages/updatebus/updatebus.component
 import { ShedulehomepageComponent } from './schedulepages/shedulehomepage/shedulehomepage.component';
 import { UpdatescheduleComponent } from './schedulepages/updateschedule/updateschedule.component';
 import { AddpassengerdetailsforbookingComponent } from './addpassengerdetailsforbooking/addpassengerdetailsforbooking.component';
+import { FooterComponent } from './common/footer/footer.component';
+
 
 const routes: Routes = [
   {
@@ -86,7 +88,12 @@ const routes: Routes = [
   {
     path:"bookingdetails",
     component:AddpassengerdetailsforbookingComponent
+  },
+  {
+    path:"footer",
+    component:FooterComponent
   }
+  
 ];
 
 @NgModule({

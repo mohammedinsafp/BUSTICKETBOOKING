@@ -1,52 +1,88 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
+body{
 
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f1f1f1;
-  }
+  overflow: hidden;
 
-  .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
+}
 
-  h1 {
-    margin-bottom: 20px;
-  }
+.border{
 
-  .button-group {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-  }
+  /* background-image: url(../../assets/image/my-image4.jpg);
 
-  .button-group button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 12px 20px;
-    margin: 8px;
-    border: none;
-    cursor: pointer;
-    width: 150px;
-    border-radius: 4px;
-    font-size: 16px;
-  }
+  background-size: contain;
 
-  .button-group button:hover {
-    opacity: 0.8;
-  }
+  background-repeat: no-repeat;
 
-  @media screen and (max-width: 480px) {
-    .container {
-      max-width: 300px;
-    }
-  }
+  background-position: center; */
+
+ 
+
+  background: linear-gradient(to bottom, #000000, #17A2B8, #000000,#17A2B8,#000000);
+
+  height: 100vh;
+
+  margin: auto;
+
+ 
+
+
+
+
+}
+
+.container{
+
+  color: white;
+
+  text-align: center;
+
+  padding: 10%;
+
+}
+
+.button-group{
+
+  padding-top: 30px;
+
+}
+
+.button-group {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  margin-top: 20px;
+
+ 
+
+}
+
+
+
+
+.button-group button {
+
+ 
+
+ 
+
+ background: linear-gradient(to bottom,#000000,#4caf50);
+
+  color: white;
+
+  padding: 12px 20px;
+
+  margin: 8px;    border: none;
+
+  cursor: pointer;
+
+  width: 150px;
+
+  border-radius: 4px;
+
+  font-size: 16px;
+
+
+
+
+}

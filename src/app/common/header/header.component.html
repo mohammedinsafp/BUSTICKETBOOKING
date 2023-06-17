@@ -7,11 +7,11 @@
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
-     
+      background-color: rgba(0, 0, 0, 0.9);
     }
 
     .header {
-      background-color: #000000;
+      
       padding: 30px;
       display: flex;
       justify-content: space-between;
@@ -34,24 +34,28 @@
       display: inline-block;
       margin-right: 10px;
     }
+    .header nav ul li :hover{
+        color: orange;
+    }
     .header nav ul li a {
       text-decoration: none;
-      color: #7487ab;
+      color: #ffffff;
     }
+    
  
     .signup-button {
   padding: 10px 20px;
   font-size: 16px;
-  background-color: green;
-  color: darkblue;
-  border: none;
+  background-color:rgb(255, 165, 0,0);
+  color: rgba(255, 255, 255);
+  border-color: orange;
   border-radius: 4px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .signup-button:hover {
-  background-color: rgb(0, 200, 0);
+  background-color:rgb(211, 203, 189);
 }
 
 /* Responsive styles */
@@ -79,10 +83,12 @@
         margin-bottom: 10px;
         
       }
-
+      
       .header nav ul li {
         display: block;
         margin: 10px 0;
+        
+
       }
     }
   </style>
@@ -91,10 +97,10 @@
 <body>
   <header class="header">
     <div class="header-logo">
-        <img src="..\assets\image\logo.png" alt="Logo" width="30" 
+        <img src="..\assets\image\MB.png" alt="Logo" width="30" 
         height="25">
     </div>
-    <nav>
+    <nav class="home">
       <ul>
         <li><a href="#">Home</a></li>
         <li><a href="#">About</a></li>
@@ -102,7 +108,7 @@
         <li><a href="#">Contact</a></li>
       </ul>
     </nav>
-    <button class="signup-button">Sign Up</button>
+    <button class="signup-button" routerLink="/login">Login</button>
 
   </header>
 </body>

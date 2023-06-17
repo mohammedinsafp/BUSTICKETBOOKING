@@ -22,7 +22,7 @@ export class SearchpageComponent {
   dropdownValues: string[]=[];
   fare:number[]=[];
   showTable: boolean = false;
- 
+  
 
   getDropdownValues(): void {
     this.demosearch.getDropdownValues().subscribe(

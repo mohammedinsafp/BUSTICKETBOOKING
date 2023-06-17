@@ -2,14 +2,15 @@
   <head>
     <style>
      body {
-      background-color: rgba(0,0,0,.7);
+      background-color: rgba(0,0,0,0);
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center center;
       color: #fff;
       font-family: Arial, sans-serif;
       margin: 0;
-     
+      font-weight: bold;
+      /* background-image: url("..\\assets\\image\\image.png"); */
     }
 
       .awesome-table {
@@ -17,6 +18,7 @@
         border-collapse: collapse;
         background-color: #333;
         border: 1px solid rgb(0, 0, 0);
+        
       }
 
       .awesome-table th,
@@ -41,72 +43,119 @@
       .awesome-table tbody tr:nth-child(even) {
         background-color: #2b2b2b;
         border-color: #060539;
+        font-weight: bold;
       }
+      .awesome-table tbody tr:nth-child(odd) {
+        font-weight: bold;
+      }
+
 
       .awesome-table tbody tr:hover {
         background-color: #555;
       }
 
-      .search-container {
+  .search-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 5px;
-  margin-bottom: 10px; /* Adjust the margin bottom value as desired */
+  padding-top: 15px;
+  margin-bottom: 5px; /* Adjust the margin bottom value as desired */
   height: 10px; /* Adjust the height value as desired */
   padding-top: 50px;
 }
 
-      .search-container label {
-        /* margin-right: 10px; */
-        color: rgb(202, 159, 159);
-        
-      }
+.search-container label {
+  color: rgb(0, 0, 0);
+  margin-left: 3px;
+  margin-right: 5px;
+}
 
-      .search-container input[type="date"] {
-        padding: 5px;
-        border-radius: 4px;
-      }
+.search-container input {
+  padding: 12px;
+  border-radius: 4px;
+  margin-left: 3px;
+  margin-right: 5px;
+  border-color: orange;
+  font-weight: bold;
+  background-color: #fff;
+  color: #333;
+}
 
-      .search-container button {
-        padding: 8px 15px;
-        background-color: #611717;
-        color: rgb(237, 211, 211);
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
+.custom-date-input {
+  color: #010713d4; 
+  background-color: #000005de;
+  
+}
+@media only screen and (max-width: 600px) {
+        /* Adjust the breakpoint as needed */
+        .search-container {
+          flex-direction: column;
+        }
       }
+.search-container select {
+  padding: 10px;
+  border-radius: 4px;
+  margin-left: 3px;
+  margin-right: 5px;
+  border-color: rgb(228, 121, 121);
+  background-color: rgb(32, 28, 28,0.85);
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+}
 
-      .book-button {
-        padding: 8px 15px;
-        background-color: #8bb3ee;
-        color: white;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-      }
-      .search-container button:hover{
-        background-color: #333;
-      }
-      .book-button:hover {
-        background-color: #aaaeec;
-      }
+.search-container button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: rgb(32, 28, 28,0.85);
+  color: #fff;
+  border-color: orange;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.search-container button:hover {
+  background-color: #ff7f00;
+}
+.search-container input[type="date"] {
+  background-color: rgb(32, 28, 28,0.85);
+  color: rgb(255, 255, 255);
+}
+
+     
+.book-button {
+  padding: 8px 15px;
+  background-color: rgb(255, 255, 255,0.5);
+  color: rgb(255, 255, 255);
+  border-color: #1bea1b;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.book-button:hover {
+  background-color: #1bea1b;
+}
+
     </style>
   </head>
   <body>
     <div class="search-container">
     <label for="starting-point">Starting Point:</label>
-    <select id="starting-point" [(ngModel)]="textbox2">
+    <select id="starting-point" [(ngModel)]="textbox2" >
       <option *ngFor="let value of dropdownValues" [value]="value">{{ value }}</option>
     </select>
 
     <label for="destination-point">Destination Point:</label>
     <select id="destination-point" [(ngModel)]="textbox3">
+      
       <option *ngFor="let value of dropdownValues" [value]="value">{{ value }}</option>
     </select>
-    Date: <input type="date" [(ngModel)]="textbox1" placeholder="" /><br /><br />
+    Date: <input type="date"  [(ngModel)]="textbox1" />
+    <br /><br />
     <button (click)="search()" (click)="searchbus()" (click)="getfare()">Search</button><br /><br /><br />
-  </div>
+  </div><br>
       <table *ngIf="showTable" class="awesome-table">
         <thead>
           <tr>
@@ -131,7 +180,7 @@
             <td>{{ busDto[i].busType }}</td>
             <td>{{ busDto[i].totalSeats }}</td>
             <td>{{ fare[i] }}</td>
-            <td><button type="submit" routerLink="/seatavailability">BOOK</button></td>
+            <td><button type="submit" class="book-button" routerLink="/seatavailability">BOOK</button></td>
           </tr>
         </tbody>
       </table><br /><br /><br />

@@ -26,6 +26,7 @@ import { HeaderComponent } from './common/header/header.component';
 import { FooterComponent } from './common/footer/footer.component';
 import { AddpassengerdetailsforbookingComponent } from './addpassengerdetailsforbooking/addpassengerdetailsforbooking.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +49,8 @@ import { AddpassengerdetailsforbookingComponent } from './addpassengerdetailsfor
     ShedulehomepageComponent,
     HeaderComponent,
     FooterComponent,
-    AddpassengerdetailsforbookingComponent
+    AddpassengerdetailsforbookingComponent,
+   
    
   ],
   imports: [

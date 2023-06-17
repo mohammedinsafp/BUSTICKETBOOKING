@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class SeatavailabilityComponent {
   seats: any[];
+  seatNo:number=0
 
   constructor() {
     this.seats = Array(40).fill('available');
@@ -22,8 +23,16 @@ export class SeatavailabilityComponent {
     }
     if (this.seats[index] === 'available') {
       this.seats[index] = 'temporarily-booked';
+      if(this.seatNo>=5)
+      {
+        alert("NO")
+        this.seats[index] = 'available';
+        this.seatNo=this.seatNo-1
+      }
+      this.seatNo=this.seatNo+1
     } else {
       this.seats[index] = 'available';
+      this.seatNo=this.seatNo-1
     }
   }
   
