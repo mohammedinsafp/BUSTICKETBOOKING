@@ -19,6 +19,7 @@ export class ServiceService {
   addscheduleUrl!:string;
   s1:Schedule[]=[];
   s2:BusDto[]=[];
+  numofseats!:number;
   constructor(private http:HttpClient) {
     this.signupUrl="http://localhost:8080/user";
     this.loginUrl="http://localhost:8080/login";

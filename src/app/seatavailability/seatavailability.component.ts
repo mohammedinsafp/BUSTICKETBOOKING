@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ServiceService } from '../service.service';
 
 @Component({
   selector: 'app-seatavailability',
@@ -8,14 +9,16 @@ import { Component } from '@angular/core';
 export class SeatavailabilityComponent {
   seats: any[];
   seatNo:number=0
-
-  constructor() {
+  
+  constructor(private service:ServiceService) {
     this.seats = Array(40).fill('available');
     this.seats[2] = 'booked';
     this.seats[5] = 'booked';
     this.seats[15] = 'booked';
     this.seats[17] = 'booked';
+    
   }
+  
   toggleSeatStatus(index: number) {
     if (this.seats[index] === 'booked') {
       // Seat is already booked, do nothing
@@ -25,7 +28,7 @@ export class SeatavailabilityComponent {
       this.seats[index] = 'temporarily-booked';
       if(this.seatNo>=5)
       {
-        alert("NO")
+        alert("Maximum 5 seats")
         this.seats[index] = 'available';
         this.seatNo=this.seatNo-1
       }
@@ -38,5 +41,8 @@ export class SeatavailabilityComponent {
   
   isBooked(seat: any) {
     return seat === 'temporarily-booked';
+  }
+  noofseats(){
+    this.service.numofseats=this.seatNo
   }
 }

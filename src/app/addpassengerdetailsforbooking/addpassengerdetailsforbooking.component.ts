@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { ServiceService } from '../service.service';
 
 @Component({
   selector: 'app-addpassengerdetailsforbooking',
@@ -7,15 +9,16 @@ import { Component } from '@angular/core';
 })
 export class AddpassengerdetailsforbookingComponent {
   passengers: any[] = [];
-  constructor() {
-    this.passengers = Array(4);
+  numofseats:number=this.service.numofseats;
+  constructor(private service:ServiceService,private router:Router) {
+    this.passengers = Array(this.numofseats);
   }
 
   addPassenger() {
     this.passengers.push({
       name: '',
       age: null,
-      gender: 'male'
+      gender: ''
     });
   }
 
