@@ -27,6 +27,7 @@ import { FooterComponent } from './common/footer/footer.component';
 import { AddpassengerdetailsforbookingComponent } from './addpassengerdetailsforbooking/addpassengerdetailsforbooking.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,6 +51,7 @@ import { AddpassengerdetailsforbookingComponent } from './addpassengerdetailsfor
     HeaderComponent,
     FooterComponent,
     AddpassengerdetailsforbookingComponent,
+
    
    
   ],

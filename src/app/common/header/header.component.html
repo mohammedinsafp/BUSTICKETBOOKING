@@ -1,116 +1,31 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      background-color: rgba(0, 0, 0, 0.9);
-    }
-
-    .header {
-      
-      padding: 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .header-logo {
-      color: #000000;
-      font-weight: bold;
-    }
-
-    .header nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-    }
-
-    .header nav ul li {
-      display: inline-block;
-      margin-right: 10px;
-    }
-    .header nav ul li :hover{
-        color: orange;
-    }
-    .header nav ul li a {
-      text-decoration: none;
-      color: #ffffff;
-    }
-    
- 
-    .signup-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color:rgb(255, 165, 0,0);
-  color: rgba(255, 255, 255);
-  border-color: orange;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.signup-button:hover {
-  background-color:rgb(211, 203, 189);
-}
-
-/* Responsive styles */
-@media screen and (max-width: 768px) {
-  .signup-button {
-    padding: 8px 16px;
-    font-size: 14px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .signup-button {
-    padding: 6px 12px;
-    font-size: 12px;
-  }
-}
-
-
-    @media screen and (max-width: 768px) {
-      .header {
-        flex-direction: column;
-      }
-
-      .header-logo {
-        margin-bottom: 10px;
-        
-      }
-      
-      .header nav ul li {
-        display: block;
-        margin: 10px 0;
-        
-
-      }
-    }
-  </style>
-</head>
-
-<body>
-  <header class="header">
-    <div class="header-logo">
-        <img src="..\assets\image\MB.png" alt="Logo" width="30" 
-        height="25">
-    </div>
-    <nav class="home">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Contact</a></li>
+<nav class="navbar navbar-expand-lg navbar-light fixed-top custom-navbar">
+  <div class="container-fluid">
+    <img src="../../assets/image/logo (2).png" alt="logo" class="logosc" srcset="">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarScroll">
+      <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll listgg" style="--bs-scroll-height: 100px;">
+        <li class="nav-item">
+          <a class="nav-link "  href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#services">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#aboutus">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contactus">Contact Us</a>
+        </li>
+        <li>
+          <div class="col-md-12 col-sm-12 center-col text-center">
+            <a href="#" class="highlight-button btn-large button xs-margin-bottom-five btncss" data-abc="true" routerLink="/login">
+              <i class=""></i>Log In
+            </a>
+          </div>
+        </li>
       </ul>
-    </nav>
-    <button class="signup-button" routerLink="/login">Login</button>
-
-  </header>
-</body>
-
-</html>
+    </div>
+  </div>
+</nav>

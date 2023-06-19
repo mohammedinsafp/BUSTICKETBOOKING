@@ -1,19 +1,32 @@
 <!DOCTYPE html>
 <html>
-
 <head>
+  <title>Bus Ticket Booking App</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
     body {
       background-image: url("..\\assets\\image\\image3.png");
-      background-color:rgb(0, 0, 0);
+      background-color: rgb(0, 0, 0);
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center center;
       color: rgb(115, 84, 84);
-      font-family: Arial, sans-serif;
+      font-family: 'Times New Roman', Times, serif;
       margin: 0;
     }
-
+    button {
+background-color:rgb(0, 0, 0);
+color: rgb(255, 255, 255);
+padding: 14px 20px;
+cursor: pointer;
+width: 100%;
+border-radius: 4px;
+font-weight: bold;
+border-color: rgb(44, 20, 20);
+}
+button:hover {
+  background-color:rgb(49, 48, 46);
+}
     .dark-theme {
       background-color: #1a1a1a;
       color: rgb(7, 2, 2);
@@ -24,22 +37,14 @@
       justify-content: center;
     }
 
-    .col-sm-7 {
-      flex: 1;
-      align-items: center;
-      justify-content: center;
-      padding-top: 10%;
-      background-color: rgba(255, 255, 255, 0);
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-    }
 
     h2 {
-      color: #5c6664;
+      color: #000000;
     }
 
     p {
-      color: rgb(206, 189, 242);
+      color: rgb(0, 0, 0);
+      font-weight: bold;
     }
 
     ul {
@@ -48,19 +53,8 @@
     }
 
     li {
-      margin-bottom: 10px;
+      margin-bottom: 0px;
     }
-
-    .col-sm-2 {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background-color: rgba(0, 0, 0, 0.1);
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0);
-    }
-
     h1 {
       font-size: 28px;
       margin-bottom: 10px;
@@ -71,111 +65,51 @@
       margin-bottom: 20px;
     }
     .image {
-
-max-height: 500px;
-
-width: 500px;
-
-padding-top: 20px;
-
-transition: transform 0.3s ease;
-
-margin-left: 20px;
-
-
-
-}
-
-
-
-
-.image:hover {
-
-transform: scale(1.1);
-
-}
-
-
-
-.card {
-
-margin-bottom: 20px;
-
-
-
-padding: 20px;
-
-
-
-}
-
-.card:hover{
-
-transform: scale(1.1);
-
-}
-
-.des{
-
-  margin-top: 20px;
-
-  padding-top: 20px;
-
- 
-
-}
-
-.card-body1:hover{
-
-transform: scale(1.1);
-
-}
-
-.card-body2:hover{
-
-transform: scale(1.1);  
-
-}
-
-.container{
-
-  padding-left: 30px;
-
-}
-    .btn-primary {
-      padding: 10px 20px;
-      background-color: hsl(242, 60%, 51%);
-      color: rgb(14, 7, 7);
-      border: none;
-      border-radius: 4px;
-      font-size: 16px;
-      cursor: pointer;
+      max-height: 500px;
+      width: 500px;
+      border-color: rgb(0, 0, 0,0.8);
+      background-color: rgb(0, 0, 0,0.8);
+      transition: transform 0.3s ease;
+      
     }
 
+    .image:hover {
+      transform: scale(1.1);
+    }
+
+    .card {
+      padding: 10px;
+      border-color: yellow;
+      border-width: 3px;
+      text-align: left;
+      margin-bottom: 20px;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+   
+
+    .card:hover{
+      transform: scale(1.1);
+
+    }
+
+    .des{
+      margin-top: 20px;
+      padding-top: 20px;
+    }
+    .container {
+      padding-bottom: 40px;
+      padding-top: 40px;
+      padding-left: 30px;
+      border-width: 0;
+    }
     .btn-primary:hover {
       background-color: #45a049;
-    }
-
-    .app-header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 9999;
-      background-color: transparent;
-      box-shadow: none;
     }
 
     @media screen and (max-width: 768px) {
       .row {
         flex-direction: column;
-      }
-
-      .col-sm-7,
-      .col-sm-2 {
-        width: 100%;
-        align-items: center;
-        justify-content: center;
       }
     }
 
@@ -184,9 +118,7 @@ transform: scale(1.1);
         padding: 10px;
       }
 
-      .row,
-      .col-sm-7,
-      .col-sm-2 {
+      .row {
         padding: 10px;
       }
 
@@ -196,68 +128,169 @@ transform: scale(1.1);
 
       p {
         font-size: 14px;
-      }
-
-      .btn-primary {
-        font-size: 14px;
+      
       }
     }
   </style>
 </head>
-
-<body class="dark-theme">
-  <app-header class="app-header"></app-header>
-  <div class="">
-    <div class="">
-      <!-- Content for the first column -->
-      <br><br><br><br><br><br><br><br><br><br><br>
-    </div>
-  </div>
-  <div class="">
-    <div class="">
+<body> 
+  
+    <img src="..\assets\image\cta-bg.jpg"  style="height: 78vh; width: 98.6vw;">
+  
+  
+  <div>
+    <div>
       <!-- Content for the first column -->
       <app-searchpage></app-searchpage>
     </div>
   </div>
-  <div class="row1">
-    <div class="">
-      <h1>Welcome to the Bus Ticket Booking App</h1>
-      <p>Book your bus tickets with ease and convenience.</p>
-      <button routerLink="login" class="btn btn-primary">Get Started</button>
+  <button routerLink="login" id="aboutus">Get Started</button>
       <div class="container">
-
         <div class="row">
-
-          <div class="col-md-6">
-
-            <img src="../assets/image/image44.png" alt="Image" class="img-fluid image img-thumbnail" width="50%" height="80%">
-
+          <div class="col-md-6" >
+            <img src="../assets/image/image44.png" alt="Image" class="img-fluid image img-thumbnail" width="50%" height="50%">
           </div>
-
           <div class="col-md-6">
-
               <div class="des">
-
-            <h2>About</h2>
-
-            <div class="card">
-
+                <h1 class="mt-5 mb-4" id="aboutus">About Us</h1>
+            <div class="card service-card">
+              <h2 class="card-title">My Bus</h2>
               <div class="card-body1">
-
-                <p>The system typically features a user-friendly website or mobile application interface that allows users to enter their travel details, such as the origin and destination cities, date and time of travel, and the number of passengers.</p>
-
+                <p>The system typically features a user-friendly website or mobile application interface that allows users to enter their travel details, such as the origin and destination cities, date and time of travel, and the number of passengers.The bus ticket booking system may also offer additional features and services. These can include seat selection, allowing passengers to choose their preferred seats in advance, as well as options for rescheduling or canceling bookings, subject to the policies of the bus operator.</p>
               </div>
-
             </div>
-            <div class="card">
-              <div class="card-body2">
-                <p>The bus ticket booking system may also offer additional features and services. These can include seat selection, allowing passengers to choose their preferred seats in advance, as well as options for rescheduling or canceling bookings, subject to the policies of the bus operator.</p>
-              </div>
-              </div>
             </div>
           </div>
         </div>
       </div>
+      <div class="container" id="services">
+
+        <h1 class="mt-5 mb-4" >Services</h1>
+    
+    
+    
+    
+        <div class="row">
+    
+          <div class="col-lg-4">
+    
+            <div class="card service-card">
+    
+              <div class="card-body">
+    
+                <h2 class="card-title">Bus Ticket Booking</h2>
+    
+                <p class="card-text">Book bus tickets online hassle-free with our user-friendly booking platform. Choose your destination, select your preferred bus operator, and reserve your seats conveniently.</p>
+    
+              </div>
+    
+            </div>
+    
+          </div>
+    
+    
+    
+    
+          <div class="col-lg-4">
+    
+            <div class="card service-card">
+    
+              <div class="card-body">
+    
+                <h2 class="card-title">Seat Selection</h2>
+    
+                <p class="card-text">Enjoy the freedom to choose your seats while booking your bus tickets. Our system allows you to select seats based on your preference, such as window seats, aisle seats, or seats near the front or back.</p>
+    
+              </div>
+    
+            </div>
+    
+          </div>
+    
+    
+    
+    
+          <div class="col-lg-4">
+    
+            <div class="card service-card">
+    
+              <div class="card-body">
+    
+                <h2 class="card-title">Real-time Availability</h2>
+    
+                <p class="card-text">Check the real-time availability of buses on your desired route. Our system provides up-to-date information on available buses, departure times, and the number of seats remaining, ensuring you can plan your trip accordingly.</p>
+    
+              </div>
+    
+            </div>
+    
+          </div>
+    
+        </div>
+    
+    
+    
+    
+        <div class="row">
+    
+          <div class="col-lg-4">
+    
+            <div class="card service-card">
+    
+              <div class="card-body">
+    
+                <h2 class="card-title">Online Payments</h2>
+    
+                <p class="card-text">Make secure online payments for your bus tickets using various payment methods. We support credit/debit cards, net banking, and digital wallets, providing you with a convenient and safe payment experience.</p>
+    
+              </div>
+    
+            </div>
+    
+          </div>
+    
+    
+    
+    
+          <div class="col-lg-4">
+    
+            <div class="card service-card">
+    
+              <div class="card-body">
+    
+                <h2 class="card-title">Booking Modifications</h2>
+    
+                <p class="card-text">Need to make changes to your booking? Our system allows you to modify your travel dates, passenger details, and even cancel your tickets directly through our platform.</p>
+    
+              </div>
+    
+            </div>
+    
+          </div>
+    
+    
+    
+    
+          <div class="col-lg-4">
+    
+            <div class="card service-card">
+    
+              <div class="card-body">
+    
+                <h2 class="card-title">Booking History</h2>
+    
+                <p class="card-text">Access your booking history and retrieve your tickets whenever needed. You can view and download your past bookings, making it easy to keep track of your travel history.</p>
+    
+              </div>
+    
+            </div>
+    
+          </div>
+    
+        </div>
+    
+      </div>
 <app-footer class="app-footer"></app-footer>
-
-
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

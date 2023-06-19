@@ -1,0 +1,51 @@
+.service-card {
+
+    border: none;
+
+    background-color: #fff;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    border-radius: 5px;
+
+    margin-bottom: 20px;
+
+    transition: transform 0.2s;
+
+  }
+
+ 
+
+  .service-card:hover {
+
+    transform: translateY(-5px);
+
+  }
+
+ 
+
+  .service-card h2 {
+
+    color: #333;
+
+    font-size: 20px;
+
+    margin-bottom: 10px;
+
+  }
+
+ 
+
+  .service-card p {
+
+    color: #666;
+
+  }
+
+  .service-card {
+
+    background-color: #f1c40f; /* Change the background color to your desired color */
+
+    /* Add any additional styles or effects to make it look awesome */
+
+  }

@@ -20,6 +20,8 @@ import { AddpassengerdetailsforbookingComponent } from './addpassengerdetailsfor
 import { FooterComponent } from './common/footer/footer.component';
 
 
+
+
 const routes: Routes = [
   {
     path:"login",
@@ -93,7 +95,6 @@ const routes: Routes = [
     path:"footer",
     component:FooterComponent
   }
-  
 ];
 
 @NgModule({
