@@ -1,7 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Schedule } from '../model/schedule';
 import { User } from '../model/user';
 import { ServiceService } from '../service.service';
 @Component({
@@ -20,21 +19,42 @@ user:User=new User();
 constructor(private service:ServiceService,private router: Router) { 
 }
 login(){
-  this.user.name=this.name;
-  this.user.password=this.password;
-  this.service.loginok(this.user).subscribe(
-    (data:User) => {
-      // console.log(data);
-      if(data.role==="user"){
-        this.router.navigate(['/searchpage']);
+  var nameElement = document.getElementById("name") as HTMLInputElement;
+  var passwordElement = document.getElementById("password") as HTMLInputElement;
+  var errorMessagesElement = document.getElementById("errorMessages");
+
+  if (nameElement && passwordElement && errorMessagesElement) {
+    var name = nameElement.value;
+    var password = passwordElement.value;
+  
+    if (name === "" || password === "") {
+      errorMessagesElement.innerHTML = "Please fill in all required fields.";
+      return;
+    }
+  
+    var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
+    if (!password.match(passwordRegex)) {
+      errorMessagesElement.innerHTML = "Password must be at least 8 characters long and contain at least one lowercase letter, one uppercase letter, and one digit.";
+      return;
+    }
+  
+    this.user.name = name;
+    this.user.password = password;
+  
+    this.service.loginok(this.user).subscribe(
+      (data: User) => {
+        if (data.role === "user") {
+          this.router.navigate(['/searchpage']);
+        } else if (data.role === "admin") {
+          this.router.navigate(['/mainhomepage']);
+        }
+      },
+      (error: HttpErrorResponse) => {
+        if (error.status === 401) {
+          alert('Invalid credentials');
+        }
       }
-      else if(data.role==="admin"){
-              this.router.navigate(['/mainhomepage']);
-            }
-        },
-        (error: HttpErrorResponse) => { // Add error parameter and handle the error here
-          if (error.status === 401) {
-            alert('Invalid credentials');
-          }
-  })}
+    );
+  }
+}
 }

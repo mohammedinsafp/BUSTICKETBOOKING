@@ -77,7 +77,7 @@
                 <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1v-1c0-1-1-4-6-4s-6 3-6 4v1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12z"/>
               </svg>
             </span>
-            <input type="text" class="form-control" placeholder="Username" [(ngModel)]="name" required>
+            <input type="text" id="name" class="form-control" placeholder="Username" [(ngModel)]="name" required>
           </div>
         </div>
       </div>
@@ -95,7 +95,7 @@
 
           </span>
 
-          <input type="email" class="form-control" placeholder="Email" required [(ngModel)]="email">
+          <input type="email" id="email" class="form-control" placeholder="Email" required [(ngModel)]="email">
 
         </div>
 
@@ -114,7 +114,7 @@
 
           </span>
 
-          <input type="text" class="form-control" placeholder="Phone" required [(ngModel)]="mobile">
+          <input type="text" class="form-control" placeholder="Phone" id="phone" required [(ngModel)]="mobile">
 
         </div>
 
@@ -128,10 +128,11 @@
                 <path d="M4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4zm0 1h8a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z"/>
               </svg>
             </span>
-            <input type="password" class="form-control" placeholder="Password" required [(ngModel)]="password">
+            <input type="password" id="password" class="form-control" placeholder="Password" required [(ngModel)]="password">
           </div>
         </div>
       </div>
+      <div id="errorMessages" style="color:red"></div>
       <div class="sum text-center">
         <input type="submit" value="Sign Up" (click)="signup()" class="btn btn-primary">
       </div>
