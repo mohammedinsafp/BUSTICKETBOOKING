@@ -3,13 +3,23 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Bus } from './model/bus';
 import { BusDto } from './model/bus-dto';
+import { RequestDto } from './model/request-dto';
 import { Schedule } from './model/schedule';
+import { Seat } from './model/seat';
 import { User } from './model/user';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ServiceService {
+  s:Seat[]=[];
+  fare: number=0;
+  date: string='';
+  seat: Seat[]=[];
+  fhault: string='';
+  thault: string='';
+  numofseats: Array<number>=[];
+  scheduleId: number=0;
   loginUrl!:string;
   signupUrl!:string;
   getUrl!:string;
@@ -19,7 +29,7 @@ export class ServiceService {
   addscheduleUrl!:string;
   s1:Schedule[]=[];
   s2:BusDto[]=[];
-  numofseats!:number;
+  
   constructor(private http:HttpClient) {
     this.signupUrl="http://localhost:8080/user";
     this.loginUrl="http://localhost:8080/login";
@@ -59,4 +69,10 @@ export class ServiceService {
     getDropdownValues(): Observable<string[]> {
       return this.http.get<string[]>('http://localhost:8081/api/v1/buses/routeDetails/all');
     }
+    getseats(s: number): Observable<any> {
+      return this.http.get(`http://localhost:8082/api/v1/schedules/seat/${s}`);
+  }
+  book(requestDto: RequestDto): Observable<any> {
+      return this.http.post('http://localhost:8082/api/v1/bookings/booking',requestDto)
+  }
   }

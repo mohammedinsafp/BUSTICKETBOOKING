@@ -89,11 +89,11 @@
         <p>Select a seat to book for your journey.</p>
         <div class="seats-container">
           <div *ngFor="let seat of seats; let i = index">
-            <div class="seat" [ngClass]="{'temporarily-booked': isBooked(seat),'booked': seat === 'booked'}" (click)="toggleSeatStatus(i)"></div>
+            <div class="seat" [ngClass]="{'temporarily-booked': seat ==='temporarily-booked','booked': seat === 'booked'}" (click)="toggleSeatStatus(i)"></div>
           </div>
         </div>
         <div class="button-container">
-          <button class="button" routerLink="/bookingdetails" (click)="noofseats()">Add {{seatNo}} Passenger Details</button>
+          <button class="button" routerLink="/bookingdetails" (click)="set()">Add {{seatNo}} Passenger Details</button>
         </div>
       </div>
     </div>

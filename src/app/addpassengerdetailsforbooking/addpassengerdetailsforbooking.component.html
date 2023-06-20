@@ -107,38 +107,55 @@
     <div class="card">
       <div class="card-body">
         <h1>Passenger Details</h1>
-        <div class="seats-container">
+        <div>
           <div class="form-group" *ngFor="let passenger of passengers; let i = index">
             <p style="font-weight: bold;">Passenger {{i+1}}</p>
             <div class="row">
               <div class="col-md-4">
                 <label for="name{{i}}">Name:</label>
-                <input type="text" class="form-control" id="name{{i}}" required>
+                <input type="text" class="form-control" id="name{{i}}" [(ngModel)]="name[i]" required>
+                <div *ngIf="nameErrors[i]" class="error-message">
+                  {{ nameErrors[i] }}
+                </div>
               </div>
               <div class="col-md-4">
                 <label for="age{{i}}">Age:</label>
-                <input type="number" class="form-control" id="age{{i}}" required>
+                <input type="number" class="form-control" id="age{{i}}" [(ngModel)]="age[i]" required>
+                <div *ngIf="ageErrors[i]" class="error-message">
+                  {{ ageErrors[i] }}
+                </div>
               </div>
               <div class="col-md-4">
                 <label for="gender{{i}}">Gender:</label>
-                <select class="form-control" id="gender{{i}}" required>
+                <select class="form-control" id="gender{{i}}" [(ngModel)]="gender[i]" required>
+                  <option value="">Select</option>
                   <option value="male">Male</option>
                   <option value="female">Female</option>
                   <option value="other">Other</option>
                 </select>
+                <div *ngIf="genderErrors[i]" class="error-message">
+                  {{ genderErrors[i] }}
+                </div>
               </div>
               <div class="col-md-4">
                 <label for="mobile{{i}}">Mobile:</label>
-                <input type="text" class="form-control" id="mobile{{i}}" required>
+                <input type="text" class="form-control" id="mobile{{i}}" [(ngModel)]="mobileNo[i]" required>
+                <div *ngIf="mobileErrors[i]" class="error-message">
+                  {{ mobileErrors[i] }}
+                </div>
               </div>
               <div class="col-md-4">
                 <label for="email{{i}}">Email:</label>
-                <input type="email" class="form-control" id="email{{i}}" required>
+                <input type="email" class="form-control" id="email{{i}}" [(ngModel)]="email[i]" required>
+                <div *ngIf="emailErrors[i]" class="error-message">
+                  {{ emailErrors[i] }}
+                </div>
               </div>
             </div>
           </div>
-          <button class="btn btn-primary" type="submit">Submit</button>
+          <button (click)="submitForm()">Submit</button>
         </div>
+        
       </div>
     </div>
   </div>

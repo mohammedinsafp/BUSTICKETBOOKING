@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Seat } from '../model/seat';
 import { ServiceService } from '../service.service';
 
 @Component({
@@ -7,42 +8,201 @@ import { ServiceService } from '../service.service';
   styleUrls: ['./seatavailability.component.css']
 })
 export class SeatavailabilityComponent {
-  seats: any[];
-  seatNo:number=0
-  
-  constructor(private service:ServiceService) {
+  seat: Seat[] =this.demosearch.seat;
+
+  fhault: string =this.demosearch.fhault;
+
+  thault: string =this.demosearch.thault;
+
+  fare: number = this.demosearch.fare;
+
+  date: string = this.demosearch.date;
+
+
+
+
+   seats: any=[];
+
+   n:number=0;
+
+   seatNo: number = 0
+
+   bookedSeats: Array<number>=[];
+
+ 
+
+  constructor(private demosearch:ServiceService) {
+
+
+
+
     this.seats = Array(40).fill('available');
-    this.seats[2] = 'booked';
-    this.seats[5] = 'booked';
-    this.seats[15] = 'booked';
-    this.seats[17] = 'booked';
-    
+
+
+
+
   }
-  
+
+
+
+
+  //  seat: Seat[]
+
+ 
+
+ process():void{
+
+  // this.route.queryParams.subscribe((params) => {
+
+  //   this.seat = params['seat'];
+
+  //   this.fhault = params['fhault'];
+
+  //   this.thault = params['thault'];
+
+  //   this.fare = params['fare'];
+
+  //   this.date = params['date'];
+
+  // });
+
+  this.seats = Array(40).fill('available');
+
+  // this.seat=this.seat;
+
+  // console.log(this.demosearch.seat)
+
+  this.seat=this.demosearch.seat
+
+  // this.n=1;
+
+  // console.log(this.fare)
+
+  // console.log(this.date)
+
+  this.seat.forEach((s,i) => {
+
+
+
+
+    if(s.fHault===this.fhault && s.tHault===this.thault && s.status === 1){
+
+     // console.log("hai")
+
+      this.seats[s.seatNo-1]= 'booked'
+
+    };
+
+    // this.n=s.seatNo
+
+ 
+
+  });
+
+ }
+
+ 
+
+
+
+
   toggleSeatStatus(index: number) {
+
+
+
+
     if (this.seats[index] === 'booked') {
+
+
+
+
       // Seat is already booked, do nothing
+
+
+
+
       return;
+
+
+
+
     }
+
+
+
+
     if (this.seats[index] === 'available') {
+
+      console.log(this.seat);
+
+
+
+
       this.seats[index] = 'temporarily-booked';
-      if(this.seatNo>=5)
-      {
-        alert("Maximum 5 seats")
+
+      this.seatNo = this.seatNo + 1;
+
+      this.bookSeats(index+1);
+
+      if (this.seatNo > 5) {
+
+        alert("MAXIMUM NUMBER OF SEATS CAN BE BOOKED AT A TIME EXCEEDED!!!!")
+
+        this.seatNo = this.seatNo - 1;
+
         this.seats[index] = 'available';
-        this.seatNo=this.seatNo-1
+
+        this.unbookSeats(index+1);
+
+        console.log(this.bookedSeats)
+
       }
-      this.seatNo=this.seatNo+1
+
+     
+
+
+
+
     } else {
+
+
+
+
       this.seats[index] = 'available';
-      this.seatNo=this.seatNo-1
+
+      this.seatNo = this.seatNo - 1;
+
+      this.unbookSeats(index+1);
+
+
+
+
+
     }
+
+
+
+
   }
-  
-  isBooked(seat: any) {
-    return seat === 'temporarily-booked';
+
+
+
+
+  public bookSeats(index: number)
+
+  {
+
+      this.bookedSeats.push(index);
+
   }
-  noofseats(){
-    this.service.numofseats=this.seatNo
+  public unbookSeats(ind:number)
+  {
+    let index = this.bookedSeats.indexOf(ind);
+    this.bookedSeats.splice(index,1)
+  }
+  set(){
+    this.bookedSeats.sort((a, b) => a - b);
+    this.demosearch.numofseats=this.bookedSeats;
+    console.log(this.demosearch.numofseats)
   }
 }
