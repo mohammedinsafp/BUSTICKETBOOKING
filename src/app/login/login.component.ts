@@ -14,9 +14,19 @@ export class LoginComponent {
   password:string='';
   mobile:string='';
   role:string='';
-user:User=new User();
+  user:User=new User();
 // user1:User[]=[];
 constructor(private service:ServiceService,private router: Router) { 
+}
+togglePasswordVisibility() {
+  const passwordInput = document.getElementById('password') as HTMLInputElement | null;
+  if (passwordInput) {
+    if (passwordInput.getAttribute('type') === 'password') {
+      passwordInput.setAttribute('type', 'text');
+    } else {
+      passwordInput.setAttribute('type', 'password');
+    }
+  }
 }
 login(){
   var nameElement = document.getElementById("name") as HTMLInputElement;
@@ -46,7 +56,7 @@ login(){
         if (data.role === "user") {
           this.router.navigate(['/searchpage']);
         } else if (data.role === "admin") {
-          this.router.navigate(['/mainhomepage']);
+          this.router.navigate(['/buspage']);
         }
       },
       (error: HttpErrorResponse) => {

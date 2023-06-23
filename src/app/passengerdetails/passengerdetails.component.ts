@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./passengerdetails.component.css']
 })
 export class PassengerdetailsComponent {
-
+  // isLoggedIn: boolean = true;
 }

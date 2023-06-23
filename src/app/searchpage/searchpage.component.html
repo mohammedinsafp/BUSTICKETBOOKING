@@ -152,7 +152,8 @@
       
       <option *ngFor="let value of dropdownValues" [value]="value">{{ value }}</option>
     </select>
-    Date: <input type="date"  [(ngModel)]="textbox1" />
+    <label for="destination-point">Date:</label>
+    <input type="date"  [(ngModel)]="textbox1" />
     <br /><br />
     <button (click)="search()" (click)="searchbus()" (click)="getfare()">Search</button><br /><br /><br />
   </div><br>
@@ -180,7 +181,7 @@
             <td>{{ busDto[i].busType }}</td>
             <td>{{ busDto[i].totalSeats }}</td>
             <td>{{ fare[i] }}</td>
-            <td><button type="submit" class="book-button" routerLink="/seatavailability">BOOK</button></td>
+            <td><button type="submit" class="book-button"  (click)="getseats(schedule.scheduleId)" (click)="setfare(fare[i])" (click)="set()" routerLink="/seatavailability">BOOK</button></td>
           </tr>
         </tbody>
       </table><br /><br /><br />

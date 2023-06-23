@@ -35,27 +35,27 @@ export class AddpassengerdetailsforbookingComponent {
     this.clearErrors();
     for (let i = 0; i < this.numofseats.length; i++) {
       if (!this.name[i]) {
-        this.nameErrors[i] = `Please enter a name for Passenger ${i + 1}.`;
+        this.nameErrors[i] = `Please enter a name .`;
         return;
       }
       // Check if Age field is empty or not a number
       if (!this.age[i] || isNaN(this.age[i])) {
-        this.ageErrors[i] = `Please enter a valid age for Passenger ${i + 1}.`;
+        this.ageErrors[i] = `Please enter a valid age .`;
         return;
       }
       // Check if Gender field is empty
       if (!this.gender[i]) {
-        this.genderErrors[i] = `Please select a gender for Passenger ${i + 1}.`;
+        this.genderErrors[i] = `Please select a gender .`;
         return;
       }
       // Check if Mobile field is empty or invalid format
       if (!this.mobileNo[i] || !/^(\+\d{1,3}[- ]?)?\d{10}$/.test(this.mobileNo[i])) {
-        this.mobileErrors[i] = `Please enter a valid mobile number for Passenger ${i + 1}.`;
+        this.mobileErrors[i] = `Please enter a valid mobile number .`;
         return;
       }
       // Check if Email field is empty or invalid format
       if (!this.email[i] || !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.email[i])) {
-        this.emailErrors[i] = `Please enter a valid email address for Passenger ${i + 1}.`;
+        this.emailErrors[i] = `Please enter a valid email address .`;
         return;
       }
       const passengerDto = new PassengerDto(this.name[i],this.email[i],this.mobileNo[i],this.age[i],this.gender[i])

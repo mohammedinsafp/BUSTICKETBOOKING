@@ -45,18 +45,19 @@
   cursor: pointer;
   transition: all 0.3s ease;
     }
-
     .btn-primary:hover {
       background-color: #ff7f00;
+      transform: translateY(-5px);
     }
    
     .create-account span {
       cursor:text;
-      color: rgb(255, 255, 255));
+      color: rgb(255, 255, 255);
     }
     .create-account span:hover {
       cursor: pointer;
       color: orange;
+      transform: translateY(-5px);
     }
     .create-account p{
       color: rgb(3, 3, 5);
@@ -91,6 +92,7 @@
               </svg>
             </span>
             <input type="password" class="form-control" id="password" placeholder="Password" required [(ngModel)]="password">
+            <span class="input-group-text show-password" (click)="togglePasswordVisibility()"><i class="bi bi-eye"></i></span>
           </div>
         </div>
       </div>

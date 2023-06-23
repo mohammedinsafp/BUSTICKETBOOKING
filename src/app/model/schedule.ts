@@ -1,8 +1,8 @@
 export class Schedule {
-    scheduleId: number | undefined;
-    date: string | undefined;
-    departureTime: string | undefined;
-    arrivalTime: string | undefined;
-    routeId: number | undefined;
-    busId: number | undefined;
+    scheduleId: number =0;
+    date: string='';
+    departureTime: string ='';
+    arrivalTime: string ='';
+    routeId: number =0;
+    busId: number =0;
 }
