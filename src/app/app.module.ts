@@ -20,13 +20,14 @@ import { MainhomepageComponent } from './Adminhomepage/mainhomepage.component';
 import { AddscheduleComponent } from './schedulepages/addschedule/addschedule.component';
 import { UpdatescheduleComponent } from './schedulepages/updateschedule/updateschedule.component';
 import { ScheduleComponent } from './schedule/schedule.component';
-import { BusComponent } from './bushomepages/bus/bus.component';
 import { ShedulehomepageComponent } from './schedulepages/shedulehomepage/shedulehomepage.component';
 import { HeaderComponent } from './common/header/header.component';
 import { FooterComponent } from './common/footer/footer.component';
 import { AddpassengerdetailsforbookingComponent } from './addpassengerdetailsforbooking/addpassengerdetailsforbooking.component';
-
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { VeiwscheduleComponent } from './schedulepages/veiwschedule/veiwschedule.component';
+import { VeiwbusComponent } from './bushomepages/veiwbus/veiwbus.component';
 
 @NgModule({
   declarations: [
@@ -46,22 +47,22 @@ import { AddpassengerdetailsforbookingComponent } from './addpassengerdetailsfor
     AddscheduleComponent,
     UpdatescheduleComponent,
     ScheduleComponent,
-    BusComponent,
+    
     ShedulehomepageComponent,
     HeaderComponent,
     FooterComponent,
     AddpassengerdetailsforbookingComponent,
-
-   
-   
+    VeiwscheduleComponent,
+    VeiwbusComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
-    
-    
+    HttpClientModule,
+    BrowserModule,
+    BrowserAnimationsModule,
+    CarouselModule
   ],
   providers: [ServiceService],
   bootstrap: [AppComponent]

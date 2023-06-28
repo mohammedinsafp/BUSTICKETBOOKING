@@ -18,6 +18,8 @@ import { ShedulehomepageComponent } from './schedulepages/shedulehomepage/shedul
 import { UpdatescheduleComponent } from './schedulepages/updateschedule/updateschedule.component';
 import { AddpassengerdetailsforbookingComponent } from './addpassengerdetailsforbooking/addpassengerdetailsforbooking.component';
 import { FooterComponent } from './common/footer/footer.component';
+import { VeiwscheduleComponent } from './schedulepages/veiwschedule/veiwschedule.component';
+import { VeiwbusComponent } from './bushomepages/veiwbus/veiwbus.component';
 
 
 
@@ -94,6 +96,14 @@ const routes: Routes = [
   {
     path:"footer",
     component:FooterComponent
+  },
+  {
+    path:"viewschedule",
+    component:VeiwscheduleComponent
+  },
+  {
+    path:"viewbus",
+    component:VeiwbusComponent
   }
 ];
 

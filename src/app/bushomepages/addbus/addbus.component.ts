@@ -9,26 +9,25 @@ import { ServiceService } from '../../service.service';
   styleUrls: ['./addbus.component.css']
 })
 export class AddbusComponent {
-  busId:string='';
-	busNumber:string='';
+  busId!:number;
 	regNo:string='';
-	engineNumber:string='';
+	engineNo:string='';
 	busType:string='';
 	busName:string='';
 	totalSeats:string='';
   bus:Bus=new Bus();
   constructor(private service:ServiceService,private router: Router) { }
 addbus(){
+    this.bus.busId=this.busId;
     this.bus.busName=this.busName;
-    this.bus.busNumber=this.busNumber;
     this.bus.busType=this.busType;
     this.bus.regNo=this.regNo;
     this.bus.totalSeats=this.totalSeats;
-    this.bus.engineNumber=this.engineNumber;
+    this.bus.engineNo=this.engineNo;
     this.service.addbusok(this.bus).subscribe(
       response => {
         console.log(response);
-        this.router.navigate(['/adminhomepage']);
+        this.router.navigate(['/viewbus']);
       }
       );
       alert("Bus Added")

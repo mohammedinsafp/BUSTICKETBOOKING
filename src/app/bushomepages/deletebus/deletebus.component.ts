@@ -8,7 +8,7 @@ import { ServiceService } from '../../service.service';
   styleUrls: ['./deletebus.component.css']
 })
 export class DeletebusComponent {
-  id: string='';
+  id!:number;
   constructor(private service: ServiceService, private router: Router) { }
   delete(){
     this.service.deleteDataById(this.id).subscribe(

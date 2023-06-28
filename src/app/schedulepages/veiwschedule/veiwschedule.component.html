@@ -1,0 +1,77 @@
+<div class="container mt-4 dark-theme">
+    <h2>Schedude List
+      <button class="btn btn-primary float-right mx-4" routerLink="/addschedule">Add Schedule</button>
+    </h2>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark">
+              <tr>
+                <th>Bus ID</th>
+                <th>Bus Name</th>
+                <th>Bus Number</th>
+                <th>Bus Type</th>
+                <th>Total Seats</th>
+                <th>Route Id</th>
+                <th>Edit Now</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let scheduleItem of busSchedules">
+                <td>{{ scheduleItem.scheduleId }}</td>
+                <td>{{ scheduleItem.arrivalTime }}</td>
+                <td>{{ scheduleItem.busId }}</td>
+                <td>{{ scheduleItem.date }}</td>
+                <td>{{ scheduleItem.departureTime }}</td>
+                <td>{{ scheduleItem.routeId }}</td>
+                <td>
+                  <button class="btn btn-primary float-right mx-4" (click)="loadEditForm(scheduleItem)" data-toggle="modal" data-target="#editTaskModal">Edit</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+  </div>
+  
+  <div class="modal fade dark-theme" id="editTaskModal" tabindex="-1" role="dialog" aria-labelledby="editTaskModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Edit Schedude</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="editTaskId">Schedule ID</label>
+            <input type="text" class="form-control" id="editTaskId" [(ngModel)]="scheduleId" readonly placeholder="Enter Bus ID" required>
+          </div>
+          <div class="form-group">
+            <label for="editTaskName">Arrival Time</label>
+            <input type="time" class="form-control" id="editTaskName"[(ngModel)]="arrivalTime" placeholder="Enter Bus Name" required>
+          </div>
+          <div class="form-group">
+            <label for="editUserId">Bus Id</label>
+            <input type="text" class="form-control" id="editUserId" [(ngModel)]="busId" placeholder="Enter Bus Number" required>
+          </div>
+          <div class="form-group">
+            <label for="editUserId">Date</label>
+            <input type="date" class="form-control" id="editdate" [(ngModel)]="date" placeholder="Enter Bus Number" required>
+          </div>
+          <div class="form-group">
+            <label for="editTaskDescription">departure Time</label>
+            <input type="time" class="form-control" id="taskDescription" [(ngModel)]="departureTime" placeholder="Total Seats">
+          </div>
+          <div class="form-group">
+            <label for="editTaskDescription">Route Id</label>
+            <input class="form-control" id="editRouteid" [(ngModel)]="routeId" placeholder="Total Seats">
+          </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <button class="btn btn-success" data-dismiss="modal" (click)="updateSchedule()">Update Schedule</button>
+          </div>
+          
+      </div>
+    </div>
+  </div>

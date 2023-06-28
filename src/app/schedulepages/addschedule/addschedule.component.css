@@ -1,10 +1,48 @@
-@media (max-width: 767px) {
-    /* Styles for screens smaller than 768px (e.g., mobile devices) */
-    .container {
-      padding-left: 10px;
-      padding-right: 10px;
-    }
-    
-    /* Additional responsive styles... */
-  }
-  
+.container {
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.container h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.container form .form-group {
+  margin-bottom: 10px;
+}
+
+.container input[type="number"],
+.container input[type="date"],
+.container input[type="time"] {
+  background-color: #555;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  width: 400%;
+}
+
+.container input[type="number"]::placeholder,
+.container input[type="date"]::placeholder,
+.container input[type="time"]::placeholder {
+  color: #ccc;
+}
+
+.container button[type="submit"] {
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.container button[type="submit"]:hover {
+  background-color: #0056b3;
+}

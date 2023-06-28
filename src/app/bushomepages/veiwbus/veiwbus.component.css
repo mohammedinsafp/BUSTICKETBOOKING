@@ -1,0 +1,94 @@
+
+  h2{
+      padding-top: 10%;
+      padding-left: 10px;
+      padding-right: 10px;
+  }
+  .table-responsive {
+    margin-top: 20px;
+    padding-left: 10px;
+      padding-right: 10px;
+  }
+  
+  .table-boxed {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .table-boxed th,
+  .table-boxed td {
+    border: 1px solid rgb(7, 6, 6);
+    padding: 8px;
+    color: #fff; /* Text color for table cells */
+  }
+  
+  .table-boxed th {
+    background-color: #222; /* Background color for table headers */
+  }
+  
+  .btn-primary.float-right {
+    margin-right: 16px;
+    background-color: #222;
+    border-color: #222;
+  }
+  
+  .btn-primary.float-right:hover {
+    background-color: #ff7f50;
+    border-color: #ff7f50;
+  }
+  
+  .btn-danger.mx-1 {
+    margin-right: 8px;
+    background-color: #222;
+    border-color: #222;
+  }
+  
+  .btn-danger.mx-1:hover {
+    background-color: #ff7f50;
+    border-color: #ff7f50;
+  }
+  
+  .modal-dialog {
+    margin-top: 120px;
+  }
+  
+  .modal-content {
+    border-radius: 10px;
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .modal-header {
+    background-color: #222;
+    border-bottom: none;
+    padding: 16px;
+  }
+  
+  .modal-title {
+    color: #fff;
+  }
+  
+  .modal-body {
+    padding: 20px;
+  }
+  
+  .form-group label {
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .form-control {
+    border-radius: 5px;
+  }
+  
+  .modal-footer {
+    background-color: #222;
+    border-top: none;
+    justify-content: flex-start;
+    padding: 16px;
+  }
+  
+  .modal-footer button {
+    margin-right: 10px;
+  }
+  

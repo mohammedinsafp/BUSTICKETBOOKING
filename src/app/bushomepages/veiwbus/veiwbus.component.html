@@ -1,0 +1,77 @@
+
+    <h2>Task List
+      <button class="btn btn-primary float-right mx-4" routerLink="/addbus">Add Bus</button>
+    </h2>
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th>Bus ID</th>
+            <th>Bus Name</th>
+            <th>Bus Number</th>
+            <th>Bus Type</th>
+            <th>Total Seats</th>
+            <th>Delete Now</th>
+            <th>Edit Now</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let busItem of bus">
+            <td>{{ busItem.busId }}</td>
+            <td>{{ busItem.busName }}</td>
+            <td>{{ busItem.regNo }}</td>
+            <td>{{ busItem.busType }}</td>
+            <td>{{ busItem.totalSeats }}</td>
+            <td>
+              <button class="btn btn-danger mx-1" (click)="delete(busItem)">Delete</button>
+            </td>
+            <td>
+              <button class="btn btn-primary float-right mx-4" (click)="loadEditForm(busItem)" data-toggle="modal" data-target="#editTaskModal">Edit</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  
+  <div class="modal fade dark-theme" id="editTaskModal" tabindex="-1" role="dialog" aria-labelledby="editTaskModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Edit Bus</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="editTaskId">Bus ID</label>
+            <input type="text" class="form-control" id="editTaskId" [(ngModel)]="busId" readonly placeholder="Enter Bus ID" required>
+          </div>
+          <div class="form-group">
+            <label for="editTaskName">Bus Name</label>
+            <input type="text" class="form-control" id="editTaskName"[(ngModel)]="busName" placeholder="Enter Bus Name" required>
+          </div>
+          <div class="form-group">
+            <label for="editUserId">Bus Number</label>
+            <input type="number" class="form-control" id="editUserId" [(ngModel)]="regNo" placeholder="Enter Bus Number" required>
+          </div>
+          <div class="form-group">
+            <label for="editStatus">Bus Type</label>
+            <select class="form-control" id="editStatus" [(ngModel)]="busType" required>
+              <option value="AC">AC</option>
+              <option value="Non-AC">Non-AC</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="editTaskDescription">Total seats</label>
+            <input class="form-control" id="taskDescription" [(ngModel)]="totalSeats" placeholder="Total Seats">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button class="btn btn-success" data-dismiss="modal" (click)="updateBus()">Update Bus</button>
+        </div>
+      </div>
+    </div>
+  </div>

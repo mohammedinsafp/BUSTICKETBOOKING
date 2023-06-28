@@ -1,14 +1,45 @@
-<head>
-  <title>Admin Panel</title>
-</head>
-<body class="border">
-  <div class="container">
-    <h1>Welcome, Admin!</h1>
-    <div class="button-group">
-      <button routerLink="/addbus">Add Bus</button>
-      <button routerLink="/deletebus">Delete Bus</button>
-      <button routerLink="/dashboard">Dashboard</button>
-      <button routerLink="/updatebus">Update Bus</button>
+<body>
+<div class="container">
+  
+
+  <div class="card col-lg-12 col-md-4 cc1" style="justify-content: center; height: 55%;">
+    <div class="col-px-3">
+      <div class="row" style="display: flex; flex-direction: row; justify-content: center;">
+        <div class="col-4 p-1">
+          <div class="card c1">
+            <div class="card-body pb-0">
+              <div class="d-flex justify-content-between">
+                <p class="mb-0" style="font-weight: bold; padding: 3rem;" routerLink="/viewbus">Bus</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-4 p-1">
+          <div class="card c1">
+            <div class="card-body pb-0">
+              <div class="d-flex justify-content-between">
+                <p class="mb-0" style="font-weight: bold; padding: 3rem;" routerLink="/viewschedule">Schedude</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row" style="display: flex; flex-direction: row; justify-content: center;">
+        
+
+        <div class="col-4 p-1">
+          <div class="card c1">
+            <div class="card-body pb-0">
+              <div class="d-flex justify-content-between">
+                <p class="mb-0" style="font-weight: bold; padding: 3rem;" routerLink="/dashboard">Dashboard</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+</div>
 </body>

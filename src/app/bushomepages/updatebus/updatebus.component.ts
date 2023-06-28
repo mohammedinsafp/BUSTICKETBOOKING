@@ -8,10 +8,9 @@ import { ServiceService } from '../../service.service';
   styleUrls: ['./updatebus.component.css']
 })
 export class UpdatebusComponent {
-  busId:string='';
-	busNumber:string='';
+  busId!:number;
 	regNo:string='';
-	engineNumber:string='';
+	engineNo:string='';
 	busType:string='';
 	busName:string='';
 	totalSeats:string='';
@@ -20,12 +19,12 @@ export class UpdatebusComponent {
 	constructor(private serviceService: ServiceService) {}
   
 	updateBus() {
-		this.updatedBus.busNumber=this.busNumber;
 		this.updatedBus.regNo=this.regNo;
 		this.updatedBus.busType=this.busType;
 		this.updatedBus.busName=this.busName;
 		this.updatedBus.totalSeats=this.totalSeats;
-	  this.serviceService.updateBusByEngineNumber(this.engineNumber, this.updatedBus)
+		this.updatedBus.engineNo=this.engineNo;
+	  this.serviceService.updateBusById( this.updatedBus)
 		.subscribe(
 		  response => {
 			console.log('Bus updated successfully:', response);

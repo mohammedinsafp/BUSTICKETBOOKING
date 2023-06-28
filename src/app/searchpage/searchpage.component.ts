@@ -143,16 +143,9 @@ export class SearchpageComponent {
                   }
 
         set(){
-
           this.demosearch.fare=this.fareOfSchedule;
-
           this.demosearch.date=this.textbox1;          
-
           this.demosearch.fhault=this.textbox2;
-
           this.demosearch.thault=this.textbox3;
-
-         
-
         }
 }

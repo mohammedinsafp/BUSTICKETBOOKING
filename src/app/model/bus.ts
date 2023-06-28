@@ -1,9 +1,7 @@
 export class Bus {
-    busId:string='';
-	busNumber:string='';
+    busId!:number;
 	regNo:string='';
-	busNo!:any;
-	engineNumber!:string;
+	engineNo!:string;
 	busType!:string;
 	busName!:string;
 	totalSeats!:string;

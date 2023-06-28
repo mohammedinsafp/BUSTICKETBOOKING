@@ -56,7 +56,7 @@ login(){
         if (data.role === "user") {
           this.router.navigate(['/searchpage']);
         } else if (data.role === "admin") {
-          this.router.navigate(['/buspage']);
+          this.router.navigate(['/mainhomepage']);
         }
       },
       (error: HttpErrorResponse) => {

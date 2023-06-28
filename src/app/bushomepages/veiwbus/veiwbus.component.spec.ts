@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BusComponent } from './bus.component';
+import { VeiwbusComponent } from './veiwbus.component';
 
-describe('BusComponent', () => {
-  let component: BusComponent;
-  let fixture: ComponentFixture<BusComponent>;
+describe('VeiwbusComponent', () => {
+  let component: VeiwbusComponent;
+  let fixture: ComponentFixture<VeiwbusComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [BusComponent]
+      declarations: [VeiwbusComponent]
     });
-    fixture = TestBed.createComponent(BusComponent);
+    fixture = TestBed.createComponent(VeiwbusComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
